@@ -809,7 +809,9 @@ if (document.getElementById('hero-waves-canvas')) {
   <div class="dev-social-card">
     <button type="button" class="dev-modal-close" id="closeDevModalBtn" aria-label="Fechar modal">✕</button>
     <div class="dev-profile-header">
-      <div class="dev-avatar">RA</div>
+      <div class="dev-avatar">
+        <img src="img/rhenan-amorim.png" alt="Rhenan Amorim" />
+      </div>
       <div class="dev-info">
         <h4 id="devModalTitle">Rhenan Amorim</h4>
         <p>Desenvolvedor Web & UI/UX</p>
