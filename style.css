@@ -2793,3 +2793,248 @@ footer { background: transparent; color: rgba(255,255,255,.65); padding: 4.5rem 
 @media (max-width: 980px) {
   .nr-detail-visual { position: static; }
 }
+
+/* ===== DEVELOPER CREDITS & SOCIAL MODAL ===== */
+.dev-credits-container {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.dev-credits-btn {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  border-radius: 4px;
+}
+
+.dev-credits-btn:hover,
+.dev-credits-btn:focus-visible {
+  color: var(--cobre-light, #ce8e52);
+  text-shadow: 0 0 10px rgba(206, 142, 82, 0.4);
+}
+
+.dev-credits-badge {
+  font-size: 0.7rem;
+  padding: 0.15rem 0.45rem;
+  border-radius: 9999px;
+  background: rgba(206, 142, 82, 0.15);
+  border: 1px solid rgba(206, 142, 82, 0.3);
+  color: var(--cobre-light, #ce8e52);
+  line-height: 1;
+}
+
+/* Modal Overlay */
+.dev-social-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  background: rgba(4, 10, 18, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s ease;
+}
+
+.dev-social-modal.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Modal Card */
+.dev-social-card {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  background: radial-gradient(circle at 50% 0%, rgba(206, 142, 82, 0.18), transparent 70%), rgba(11, 23, 38, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 1.5rem;
+  padding: 1.75rem;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.65), 0 0 40px rgba(206, 142, 82, 0.15);
+  transform: scale(0.92) translateY(15px);
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.dev-social-modal.is-active .dev-social-card {
+  transform: scale(1) translateY(0);
+}
+
+/* Close Button */
+.dev-modal-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.dev-modal-close:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  transform: rotate(90deg);
+}
+
+/* Developer Header */
+.dev-profile-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.dev-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ce8e52, #1f4e79);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: #fff;
+  font-family: 'Outfit', sans-serif;
+  box-shadow: 0 4px 15px rgba(206, 142, 82, 0.35);
+  flex-shrink: 0;
+}
+
+.dev-info h4 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+  font-family: 'Outfit', sans-serif;
+  line-height: 1.2;
+}
+
+.dev-info p {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0.25rem 0 0 0;
+}
+
+/* Links Container */
+.dev-links-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.dev-social-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.9rem 1.1rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.dev-social-item:hover {
+  background: rgba(255, 255, 255, 0.09);
+  transform: translateX(6px);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.dev-social-item.whatsapp:hover {
+  border-color: rgba(37, 211, 102, 0.5);
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.2);
+}
+
+.dev-social-item.instagram:hover {
+  border-color: rgba(228, 64, 95, 0.5);
+  box-shadow: 0 4px 20px rgba(228, 64, 95, 0.2);
+}
+
+.dev-social-item.linkedin:hover {
+  border-color: rgba(10, 102, 194, 0.5);
+  box-shadow: 0 4px 20px rgba(10, 102, 194, 0.2);
+}
+
+.dev-social-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.dev-social-icon.whatsapp {
+  background: rgba(37, 211, 102, 0.15);
+  color: #25D366;
+}
+
+.dev-social-icon.instagram {
+  background: rgba(228, 64, 95, 0.15);
+  color: #E4405F;
+}
+
+.dev-social-icon.linkedin {
+  background: rgba(10, 102, 194, 0.15);
+  color: #0A66C2;
+}
+
+.dev-social-details {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.dev-social-title {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.2;
+}
+
+.dev-social-subtitle {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.55);
+  margin-top: 0.15rem;
+}
+
+.dev-social-arrow {
+  color: rgba(255, 255, 255, 0.3);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.dev-social-item:hover .dev-social-arrow {
+  color: #fff;
+  transform: translateX(3px);
+}
+
