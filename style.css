@@ -2798,9 +2798,11 @@ footer { background: transparent; color: rgba(255,255,255,.65); padding: 4.5rem 
 .dev-credits-container {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.35rem;
   font-size: 0.8rem;
   color: rgba(255, 255, 255, 0.55);
+  text-align: center;
 }
 
 .dev-credits-btn {
