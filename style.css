@@ -2196,9 +2196,9 @@ footer { background: transparent; color: rgba(255,255,255,.65); padding: 4.5rem 
 @media (max-width: 1024px) {
   #home.parallax-section,
   section#home.parallax-section {
-    align-items: flex-start !important;
-    justify-content: flex-end !important;
-    padding-top: 8.5rem !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding-top: 4rem !important;
   }
 
   /* Logo mobile: visível e centralizada no topo */
@@ -2224,18 +2224,17 @@ footer { background: transparent; color: rgba(255,255,255,.65); padding: 4.5rem 
     width: auto !important;
   }
 
-  /* Conteúdo alinhado à direita em mobile com margem confortável */
+  /* Conteúdo 100% centralizado em mobile */
   #home .hero-content,
   .hero-content {
     padding-top: 0 !important;
     padding-bottom: 1.5rem !important;
-    padding-left: 1.5rem !important;
-    padding-right: 1.5rem !important;
-    margin-left: auto !important;
-    margin-right: 0 !important;
-    justify-content: flex-start !important;
-    align-items: flex-end !important;
-    text-align: right !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    margin: 0 auto !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
   }
 
   .hero-title {
@@ -2243,9 +2242,9 @@ footer { background: transparent; color: rgba(255,255,255,.65); padding: 4.5rem 
     line-height: 1.25 !important;
     margin-bottom: 0.7rem !important;
     max-width: 100% !important;
-    text-align: right !important;
+    text-align: center !important;
     margin-left: auto !important;
-    margin-right: 0 !important;
+    margin-right: auto !important;
   }
 
   .hero-sub {
@@ -2253,17 +2252,17 @@ footer { background: transparent; color: rgba(255,255,255,.65); padding: 4.5rem 
     line-height: 1.5 !important;
     margin-bottom: 1.2rem !important;
     max-width: 100% !important;
-    text-align: right !important;
+    text-align: center !important;
     margin-left: auto !important;
-    margin-right: 0 !important;
+    margin-right: auto !important;
   }
 
   .hero-actions {
     margin-top: 0.5rem !important;
     margin-bottom: 1.2rem !important;
     gap: 0.6rem !important;
-    justify-content: flex-end !important;
-    align-items: flex-end !important;
+    justify-content: center !important;
+    align-items: center !important;
     padding-left: 0 !important;
     width: 100% !important;
   }
@@ -2283,51 +2282,50 @@ footer { background: transparent; color: rgba(255,255,255,.65); padding: 4.5rem 
 
 #home.parallax-section,
 section#home.parallax-section {
-  align-items: flex-start !important;
-  justify-content: flex-end !important;
-  padding-top: 11rem !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding-top: 0 !important;
 }
 
 .hero-content {
   display: flex !important;
   flex-direction: column !important;
-  justify-content: flex-start !important;
-  align-items: flex-end !important;
-  text-align: right !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
   width: 100% !important;
-  max-width: 580px !important;
-  margin-left: auto !important;
-  margin-right: 5rem !important;
-  padding-right: 1rem !important;
+  max-width: 720px !important;
+  margin: 0 auto !important;
+  padding: 0 1.5rem !important;
 }
 
 .hero-title {
-  font-size: clamp(1.3rem, 2.4vw, 1.8rem) !important;
-  text-align: right !important;
+  font-size: clamp(1.35rem, 2.5vw, 1.85rem) !important;
+  text-align: center !important;
   margin-left: auto !important;
-  margin-right: 0 !important;
+  margin-right: auto !important;
   margin-bottom: 0.8rem !important;
-  max-width: 560px !important;
+  max-width: 700px !important;
 }
 
 .hero-sub {
   font-size: 0.88rem !important;
-  text-align: right !important;
+  text-align: center !important;
   margin-left: auto !important;
-  margin-right: 0 !important;
+  margin-right: auto !important;
   margin-bottom: 1.5rem !important;
-  max-width: 520px !important;
+  max-width: 580px !important;
   line-height: 1.55 !important;
 }
 
 .hero-actions {
   display: flex !important;
-  justify-content: flex-end !important;
+  justify-content: center !important;
   align-items: center !important;
   gap: 0.75rem !important;
   width: 100% !important;
   margin-left: auto !important;
-  margin-right: 0 !important;
+  margin-right: auto !important;
 }
 
 /* ===== HERO LEGIBILITY & CONTRAST OVERRIDES ===== */
