@@ -230,7 +230,7 @@ section { padding: 5.5rem 0; }
 .hero-overlay {
   position: absolute; inset: 0;
   z-index: 1; pointer-events: none;
-  background: linear-gradient(180deg, rgba(8, 20, 32, 0.35) 0%, rgba(8, 20, 32, 0.15) 50%, rgba(8, 20, 32, 0.5) 100%);
+  background: linear-gradient(180deg, rgba(10, 27, 42, 0.72) 0%, rgba(15, 42, 68, 0.58) 50%, rgba(10, 27, 42, 0.78) 100%);
 }
 .hero-pattern {
   position: absolute; inset: 0; opacity: .04; z-index: 1; pointer-events: none;
