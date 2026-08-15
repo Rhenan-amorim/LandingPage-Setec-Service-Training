@@ -220,8 +220,8 @@ section { padding: 5.5rem 0; }
   position: absolute; inset: 0;
   width: 100%; height: 100%;
   object-fit: cover;
-  object-position: center 30%;
-  filter: brightness(0.9) contrast(1.05);
+  object-position: center 35%;
+  filter: brightness(1.02) contrast(1.05);
 }
 @keyframes heroKenBurns {
   from { transform: scale(1.04); }
@@ -230,9 +230,7 @@ section { padding: 5.5rem 0; }
 .hero-overlay {
   position: absolute; inset: 0;
   z-index: 1; pointer-events: none;
-  background:
-    linear-gradient(90deg, rgba(8, 20, 32, 0.94) 0%, rgba(10, 27, 42, 0.84) 38%, rgba(14, 35, 52, 0.55) 70%, rgba(8, 20, 32, 0.75) 100%),
-    linear-gradient(0deg, rgba(8, 20, 32, 0.88) 0%, rgba(8, 20, 32, 0.25) 50%, rgba(8, 20, 32, 0.65) 100%);
+  background: linear-gradient(180deg, rgba(8, 20, 32, 0.35) 0%, rgba(8, 20, 32, 0.15) 50%, rgba(8, 20, 32, 0.5) 100%);
 }
 .hero-pattern {
   position: absolute; inset: 0; opacity: .04; z-index: 1; pointer-events: none;
@@ -2295,28 +2293,29 @@ footer { background: transparent; color: rgba(255,255,255,.65); padding: 4.5rem 
 }
 
 .hero-title {
-  font-size: clamp(1.8rem, 3.5vw, 2.6rem) !important;
+  font-size: clamp(1.25rem, 2.5vw, 1.85rem) !important;
   margin-left: auto !important;
   margin-right: auto !important;
   text-align: center !important;
-  margin-bottom: 0.75rem !important;
-  max-width: 800px !important;
+  margin-bottom: 0.65rem !important;
+  max-width: 760px !important;
 }
 
 .hero-sub {
-  font-size: 0.98rem !important;
+  font-size: 0.85rem !important;
   margin-left: auto !important;
   margin-right: auto !important;
   text-align: center !important;
-  margin-bottom: 1.75rem !important;
-  max-width: 640px !important;
-  line-height: 1.6 !important;
+  margin-bottom: 1.35rem !important;
+  max-width: 580px !important;
+  line-height: 1.55 !important;
 }
 
 .hero-actions {
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
+  gap: 0.75rem !important;
   width: 100% !important;
   margin-left: auto !important;
   margin-right: auto !important;
@@ -2382,8 +2381,8 @@ footer { background: transparent; color: rgba(255,255,255,.65); padding: 4.5rem 
 }
 
 .hero-title {
-  color: #ffffff !important;
-  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.7) !important;
+  color: rgba(255, 255, 255, 0.92) !important;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.6) !important;
 }
 
 .hero-title .highlight {
@@ -2395,24 +2394,43 @@ footer { background: transparent; color: rgba(255,255,255,.65); padding: 4.5rem 
 }
 
 .hero-sub {
-  color: rgba(255, 255, 255, 0.92) !important;
-  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.7) !important;
+  color: rgba(255, 255, 255, 0.78) !important;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6) !important;
   opacity: 1 !important;
 }
 
-/* Button override for "Conhecer Infraestrutura" */
-.hero-actions .btn-outline {
-  background: rgba(255, 255, 255, 0.08) !important;
-  color: #ffffff !important;
-  border-color: rgba(255, 255, 255, 0.35) !important;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) !important;
+/* Translucent Button Styling */
+.hero-actions .btn {
+  padding: 0.55rem 1.25rem !important;
+  font-size: 0.82rem !important;
+  border-radius: 6px !important;
   backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+}
+
+.hero-actions .btn-primary {
+  background: rgba(206, 142, 82, 0.75) !important;
+  border-color: rgba(206, 142, 82, 0.85) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+}
+.hero-actions .btn-primary:hover {
+  background: rgba(206, 142, 82, 0.95) !important;
+  box-shadow: 0 6px 20px rgba(206, 142, 82, 0.4) !important;
+}
+
+.hero-actions .btn-outline {
+  background: rgba(10, 27, 42, 0.35) !important;
+  color: rgba(255, 255, 255, 0.85) !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) !important;
 }
 
 .hero-actions .btn-outline:hover {
-  background: var(--cobre-light) !important;
+  background: rgba(206, 142, 82, 0.75) !important;
   color: #ffffff !important;
-  border-color: var(--cobre-light) !important;
+  border-color: rgba(206, 142, 82, 0.85) !important;
 }
 
 /* ===== NEW ANIMATIONS FOR QUEM SOMOS AND PILLARS ===== */
