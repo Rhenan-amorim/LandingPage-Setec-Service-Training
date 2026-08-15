@@ -230,7 +230,7 @@ section { padding: 5.5rem 0; }
 .hero-overlay {
   position: absolute; inset: 0;
   z-index: 1; pointer-events: none;
-  background: linear-gradient(180deg, rgba(10, 27, 42, 0.72) 0%, rgba(15, 42, 68, 0.58) 50%, rgba(10, 27, 42, 0.78) 100%);
+  background: linear-gradient(90deg, rgba(10, 27, 42, 0.15) 0%, rgba(10, 27, 42, 0.35) 45%, rgba(10, 27, 42, 0.75) 100%);
 }
 .hero-pattern {
   position: absolute; inset: 0; opacity: .04; z-index: 1; pointer-events: none;
@@ -2283,77 +2283,73 @@ footer { background: transparent; color: rgba(255,255,255,.65); padding: 4.5rem 
 
 
 .hero-content {
-  text-align: center !important;
   display: flex !important;
-  flex-direction: column !important;
+  justify-content: flex-end !important;
   align-items: center !important;
-  justify-content: center !important;
   width: 100% !important;
-  margin: 0 auto !important;
+}
+
+.hero-card {
+  width: 100%;
+  max-width: 520px;
+  background: rgba(10, 27, 42, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  padding: 2.25rem;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(206, 142, 82, 0.1);
+  margin-left: auto;
+  margin-right: 0;
+  text-align: left;
 }
 
 .hero-title {
-  font-size: clamp(1.25rem, 2.5vw, 1.85rem) !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  text-align: center !important;
-  margin-bottom: 0.65rem !important;
-  max-width: 760px !important;
+  font-size: clamp(1.25rem, 2.2vw, 1.65rem) !important;
+  text-align: left !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  margin-bottom: 0.8rem !important;
+  max-width: 100% !important;
 }
 
 .hero-sub {
-  font-size: 0.85rem !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  text-align: center !important;
-  margin-bottom: 1.35rem !important;
-  max-width: 580px !important;
+  font-size: 0.86rem !important;
+  text-align: left !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  margin-bottom: 1.5rem !important;
+  max-width: 100% !important;
   line-height: 1.55 !important;
 }
 
 .hero-actions {
   display: flex !important;
-  justify-content: center !important;
+  justify-content: flex-start !important;
   align-items: center !important;
   gap: 0.75rem !important;
   width: 100% !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 
-.hero-stats {
-  justify-content: center !important;
-  width: 100%;
-  margin-top: 1rem;
-}
-
-/* Left-aligned on Desktop (>= 1025px) to fit in the empty space */
-@media (min-width: 1025px) {
+@media (max-width: 1024px) {
   .hero-content {
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 0 !important;
-    margin-top: 0 !important;
+    justify-content: center !important;
   }
-  
-  .hero-title {
-    text-align: center;
+  .hero-card {
+    max-width: 100% !important;
+    padding: 1.5rem 1.25rem !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+  }
+  .hero-title, .hero-sub {
+    text-align: center !important;
     margin-left: auto !important;
     margin-right: auto !important;
   }
-  
-  .hero-sub {
-    text-align: center;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-  
   .hero-actions {
     justify-content: center !important;
-    width: auto;
   }
 }
 
