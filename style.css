@@ -135,11 +135,12 @@ section { padding: 5.5rem 0; }
   margin-left: auto;
 }
 .nav-links a {
-  color: var(--azul);
+  color: #FFFFFF;
   font-weight: 500;
   font-size: .9rem;
   letter-spacing: .02em;
   transition: color .2s;
+  text-shadow: 0 1px 4px rgba(0,0,0,.4);
 }
 .nav-links a:hover { color: var(--cobre-light); }
 
