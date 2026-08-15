@@ -218,6 +218,8 @@ section { padding: 5.5rem 0; }
   position: absolute; inset: 0;
   width: 100%; height: 100%;
   object-fit: cover;
+  object-position: center 30%;
+  filter: brightness(0.9) contrast(1.05);
 }
 @keyframes heroKenBurns {
   from { transform: scale(1.04); }
@@ -226,10 +228,9 @@ section { padding: 5.5rem 0; }
 .hero-overlay {
   position: absolute; inset: 0;
   z-index: 1; pointer-events: none;
-  /* legibility gradient: dark on the left (text), lighter on the right (ship) + bottom fade */
   background:
-    linear-gradient(90deg, rgba(10,27,42,.95) 0%, rgba(12,32,48,.82) 32%, rgba(14,35,52,.42) 62%, rgba(14,35,52,.55) 100%),
-    linear-gradient(0deg, rgba(10,27,42,.85) 0%, rgba(10,27,42,.08) 32%, rgba(10,27,42,.40) 100%);
+    linear-gradient(90deg, rgba(8, 20, 32, 0.94) 0%, rgba(10, 27, 42, 0.84) 38%, rgba(14, 35, 52, 0.55) 70%, rgba(8, 20, 32, 0.75) 100%),
+    linear-gradient(0deg, rgba(8, 20, 32, 0.88) 0%, rgba(8, 20, 32, 0.25) 50%, rgba(8, 20, 32, 0.65) 100%);
 }
 .hero-pattern {
   position: absolute; inset: 0; opacity: .04; z-index: 1; pointer-events: none;
@@ -2356,18 +2357,35 @@ footer { background: transparent; color: rgba(255,255,255,.65); padding: 4.5rem 
 }
 
 /* ===== HERO LEGIBILITY & CONTRAST OVERRIDES ===== */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 1.1rem;
+  border-radius: 2rem;
+  background: rgba(206, 142, 82, 0.15);
+  border: 1px solid rgba(206, 142, 82, 0.4);
+  color: var(--cobre-light);
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+
 .hero-content {
   background: transparent !important;
   border-radius: 0 !important;
 }
 
 .hero-title {
-  color: var(--azul) !important;
-  text-shadow: none !important;
+  color: #ffffff !important;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.7) !important;
 }
 
 .hero-title .highlight {
-  background: linear-gradient(135deg, var(--cobre-light), var(--cobre-dark)) !important;
+  background: linear-gradient(135deg, #f5b775, #ce8e52) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
   background-clip: text !important;
@@ -2375,23 +2393,24 @@ footer { background: transparent; color: rgba(255,255,255,.65); padding: 4.5rem 
 }
 
 .hero-sub {
-  color: var(--azul) !important; /* Navy blue for high legibility on light background */
-  text-shadow: none !important;
-  opacity: 0.95 !important;
+  color: rgba(255, 255, 255, 0.92) !important;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.7) !important;
+  opacity: 1 !important;
 }
 
-/* Button override for "Conhecer Serviços" */
+/* Button override for "Conhecer Infraestrutura" */
 .hero-actions .btn-outline {
-  background: transparent !important;
-  color: var(--azul) !important;
-  border-color: var(--azul) !important;
-  text-shadow: none !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.35) !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) !important;
+  backdrop-filter: blur(8px);
 }
 
 .hero-actions .btn-outline:hover {
-  background: var(--azul) !important;
-  color: var(--branco) !important;
-  border-color: var(--azul) !important;
+  background: var(--cobre-light) !important;
+  color: #ffffff !important;
+  border-color: var(--cobre-light) !important;
 }
 
 /* ===== NEW ANIMATIONS FOR QUEM SOMOS AND PILLARS ===== */
