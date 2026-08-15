@@ -110,14 +110,15 @@ section { padding: 5.5rem 0; }
   align-items: center;
   justify-content: space-between;
 }
-.nav-logo { display: flex; align-items: center; gap: .5rem; }
+.nav-logo { display: flex; align-items: center; gap: .6rem; }
 .nav-logo img {
-  height: 58px;
-  width: 110px;
+  height: 38px;
+  width: 38px;
   object-fit: contain;
   object-position: center;
+  flex-shrink: 0;
 }
-.nav-logo svg { height: 58px; }
+.nav-logo svg { height: 38px; }
 
 /* Dual logo visibility states */
 .nav-logo .logo-scrolled { display: none; }
@@ -2217,13 +2218,13 @@ footer { background: transparent; color: rgba(255,255,255,.65); padding: 4.5rem 
     width: 100% !important;
   }
   .hero-mobile-logo-img {
-    height: 52px !important;
-    width: auto !important;
+    height: 38px !important;
+    width: 38px !important;
     object-fit: contain !important;
   }
   .hero-mobile-logo-text {
-    height: 52px !important;
-    width: 156px !important;
+    height: 38px !important;
+    width: auto !important;
   }
 
   /* Conteúdo alinhado à esquerda */
