@@ -112,13 +112,13 @@ section { padding: 5.5rem 0; }
 }
 .nav-logo { display: flex; align-items: center; gap: .6rem; }
 .nav-logo img {
-  height: 38px;
-  width: 38px;
+  height: 46px;
+  width: 46px;
   object-fit: contain;
   object-position: center;
   flex-shrink: 0;
 }
-.nav-logo svg { height: 38px; }
+.nav-logo svg { height: 46px; }
 
 /* Dual logo visibility states */
 .nav-logo .logo-scrolled { display: none; }
@@ -2218,12 +2218,12 @@ footer { background: transparent; color: rgba(255,255,255,.65); padding: 4.5rem 
     width: 100% !important;
   }
   .hero-mobile-logo-img {
-    height: 38px !important;
-    width: 38px !important;
+    height: 46px !important;
+    width: 46px !important;
     object-fit: contain !important;
   }
   .hero-mobile-logo-text {
-    height: 38px !important;
+    height: 46px !important;
     width: auto !important;
   }
 
