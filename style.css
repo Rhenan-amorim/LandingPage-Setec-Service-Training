@@ -2224,18 +2224,18 @@ footer { background: transparent; color: rgba(255,255,255,.65); padding: 4.5rem 
     width: auto !important;
   }
 
-  /* Conteúdo alinhado no canto superior direito em mobile com margem confortável */
+  /* Conteúdo alinhado à direita em mobile com margem confortável */
   #home .hero-content,
   .hero-content {
     padding-top: 0 !important;
     padding-bottom: 1.5rem !important;
-    padding-left: 2rem !important;
-    padding-right: 2rem !important;
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
     margin-left: auto !important;
     margin-right: 0 !important;
     justify-content: flex-start !important;
-    align-items: flex-start !important;
-    text-align: left !important;
+    align-items: flex-end !important;
+    text-align: right !important;
   }
 
   .hero-title {
@@ -2243,9 +2243,9 @@ footer { background: transparent; color: rgba(255,255,255,.65); padding: 4.5rem 
     line-height: 1.25 !important;
     margin-bottom: 0.7rem !important;
     max-width: 100% !important;
-    text-align: left !important;
-    margin-left: 0 !important;
-    margin-right: auto !important;
+    text-align: right !important;
+    margin-left: auto !important;
+    margin-right: 0 !important;
   }
 
   .hero-sub {
@@ -2253,17 +2253,17 @@ footer { background: transparent; color: rgba(255,255,255,.65); padding: 4.5rem 
     line-height: 1.5 !important;
     margin-bottom: 1.2rem !important;
     max-width: 100% !important;
-    text-align: left !important;
-    margin-left: 0 !important;
-    margin-right: auto !important;
+    text-align: right !important;
+    margin-left: auto !important;
+    margin-right: 0 !important;
   }
 
   .hero-actions {
     margin-top: 0.5rem !important;
     margin-bottom: 1.2rem !important;
     gap: 0.6rem !important;
-    justify-content: flex-start !important;
-    align-items: flex-start !important;
+    justify-content: flex-end !important;
+    align-items: flex-end !important;
     padding-left: 0 !important;
     width: 100% !important;
   }
@@ -2292,8 +2292,8 @@ section#home.parallax-section {
   display: flex !important;
   flex-direction: column !important;
   justify-content: flex-start !important;
-  align-items: flex-start !important;
-  text-align: left !important;
+  align-items: flex-end !important;
+  text-align: right !important;
   width: 100% !important;
   max-width: 580px !important;
   margin-left: auto !important;
@@ -2303,18 +2303,18 @@ section#home.parallax-section {
 
 .hero-title {
   font-size: clamp(1.3rem, 2.4vw, 1.8rem) !important;
-  text-align: left !important;
-  margin-left: 0 !important;
-  margin-right: auto !important;
+  text-align: right !important;
+  margin-left: auto !important;
+  margin-right: 0 !important;
   margin-bottom: 0.8rem !important;
   max-width: 560px !important;
 }
 
 .hero-sub {
   font-size: 0.88rem !important;
-  text-align: left !important;
-  margin-left: 0 !important;
-  margin-right: auto !important;
+  text-align: right !important;
+  margin-left: auto !important;
+  margin-right: 0 !important;
   margin-bottom: 1.5rem !important;
   max-width: 520px !important;
   line-height: 1.55 !important;
@@ -2322,12 +2322,12 @@ section#home.parallax-section {
 
 .hero-actions {
   display: flex !important;
-  justify-content: flex-start !important;
+  justify-content: flex-end !important;
   align-items: center !important;
   gap: 0.75rem !important;
   width: 100% !important;
-  margin-left: 0 !important;
-  margin-right: auto !important;
+  margin-left: auto !important;
+  margin-right: 0 !important;
 }
 
 /* ===== HERO LEGIBILITY & CONTRAST OVERRIDES ===== */
