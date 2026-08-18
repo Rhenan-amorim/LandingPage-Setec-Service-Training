@@ -920,7 +920,7 @@ if (document.readyState === 'loading') {
   initHeroSlider();
 }
 
-// ===== LIQUID GRID CANVAS (ORIGINKIT) =====
+// ===== LIQUID GRID CANVAS (ORIGINKIT HIGH-TECH ENHANCED) =====
 function initLiquidGrid() {
   const canvas = document.getElementById('liquid-grid-canvas');
   if (!canvas) return;
@@ -928,15 +928,15 @@ function initLiquidGrid() {
   if (!ctx) return;
 
   const config = {
-    cellSize: 32,
-    lineWidth: 1,
-    lineColor: 'rgba(0, 255, 238, 0.18)',
+    cellSize: 26,
+    lineWidth: 1.2,
+    lineColor: 'rgba(0, 255, 238, 0.35)',
     glowColor: 'rgb(0, 255, 238)',
-    radius: 65,
-    hoverStrength: 0.45,
+    radius: 75,
+    hoverStrength: 0.65,
     damping: 0.965,
-    waveHeight: 14,
-    step: 8
+    waveHeight: 18,
+    step: 7
   };
 
   let W = 0, H = 0;
@@ -1034,16 +1034,20 @@ function initLiquidGrid() {
 
     const base = new Path2D();
     const glow = Array.from({ length: BUCKETS }, () => new Path2D());
+    const nodes = [];
 
     function emit(n) {
       base.moveTo(px[0], py[0]);
       for (let i = 1; i < n; i++) base.lineTo(px[i], py[i]);
       for (let i = 1; i < n; i++) {
         const k = pk[i] > pk[i - 1] ? pk[i] : pk[i - 1];
-        if (k < 0.06) continue;
+        if (k < 0.05) continue;
         const b = Math.min(BUCKETS - 1, Math.floor(k * BUCKETS));
         glow[b].moveTo(px[i - 1], py[i - 1]);
         glow[b].lineTo(px[i], py[i]);
+        if (k > 0.25 && Math.random() < 0.35) {
+          nodes.push({ x: px[i], y: py[i], k });
+        }
       }
     }
 
@@ -1083,9 +1087,18 @@ function initLiquidGrid() {
 
     for (let i = 0; i < BUCKETS; i++) {
       const t = (i + 1) / BUCKETS;
-      ctx.strokeStyle = `rgba(0, 255, 238, ${t * 0.75})`;
-      ctx.lineWidth = config.lineWidth * (1 + t * 0.8);
+      ctx.strokeStyle = `rgba(0, 255, 238, ${0.45 + t * 0.55})`;
+      ctx.lineWidth = config.lineWidth * (1.2 + t * 1.2);
       ctx.stroke(glow[i]);
+    }
+
+    // Futuristic Glowing Cyber Nodes
+    for (let i = 0; i < nodes.length; i++) {
+      const node = nodes[i];
+      ctx.fillStyle = node.k > 0.6 ? '#CE8E52' : '#00FFEE';
+      ctx.beginPath();
+      ctx.arc(node.x, node.y, 2 + node.k * 2.5, 0, Math.PI * 2);
+      ctx.fill();
     }
   }
 
@@ -1099,10 +1112,18 @@ function initLiquidGrid() {
 
   parent.addEventListener('click', (e) => {
     const rect = canvas.getBoundingClientRect();
-    addDrop(e.clientX - rect.left, e.clientY - rect.top, config.radius * 1.6, 2.5);
+    addDrop(e.clientX - rect.left, e.clientY - rect.top, config.radius * 1.8, 3.2);
   });
 
-  function loop() {
+  let lastPulseTime = 0;
+
+  function loop(now) {
+    if (now - lastPulseTime > 2000) {
+      lastPulseTime = now;
+      const rx = W * (0.15 + Math.random() * 0.7);
+      const ry = H * (0.15 + Math.random() * 0.7);
+      addDrop(rx, ry, config.radius, 0.5);
+    }
     if (queued) {
       addDrop(queued.x, queued.y, config.radius, config.hoverStrength);
       queued = null;
@@ -1115,7 +1136,7 @@ function initLiquidGrid() {
   }
 
   drawGrid();
-  loop();
+  requestAnimationFrame(loop);
 }
 
 if (document.readyState === 'loading') {
