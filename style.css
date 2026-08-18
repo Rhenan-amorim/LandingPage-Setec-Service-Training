@@ -2452,7 +2452,7 @@ section#home.parallax-section {
 .neon-glow-wrapper:hover .ring-5 { transform: rotate(-97deg) !important; }
 .neon-glow-wrapper:hover .ring-6 { transform: rotate(-110deg) !important; }
 
-/* Pill Button Base (Originkit Specs) */
+/* Pill Button Base (Originkit Specs + SETEC Blue) */
 .btn-neon-glow {
   position: relative !important;
   z-index: 1 !important;
@@ -2465,23 +2465,23 @@ section#home.parallax-section {
   font-weight: 600 !important;
   letter-spacing: 0.03em !important;
   color: #FFFFFF !important;
-  background-color: #010201 !important;
+  background-color: #0E2334 !important;
   border: 1px solid #00FFEE !important;
   border-radius: 100px !important;
   cursor: pointer !important;
   text-decoration: none !important;
   white-space: nowrap !important;
   user-select: none !important;
-  box-shadow: 0 0 20px rgba(0, 255, 238, 0.45), inset 0 0 10px rgba(0, 255, 238, 0.15) !important;
+  box-shadow: 0 0 20px rgba(0, 255, 238, 0.45), inset 0 0 10px rgba(0, 255, 238, 0.2) !important;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
 }
 
 .btn-neon-glow:hover {
   color: #00FFEE !important;
   border-color: #00FFEE !important;
-  background-color: #081622 !important;
+  background-color: #1F4E79 !important;
   transform: scale(1.03) !important;
-  box-shadow: 0 0 35px rgba(0, 255, 238, 0.85), inset 0 0 16px rgba(0, 255, 238, 0.3) !important;
+  box-shadow: 0 0 35px rgba(0, 255, 238, 0.85), inset 0 0 16px rgba(0, 255, 238, 0.35) !important;
 }
 
 /* ===== NEW ANIMATIONS FOR QUEM SOMOS AND PILLARS ===== */
