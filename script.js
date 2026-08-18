@@ -901,3 +901,22 @@ if (document.getElementById('hero-waves-canvas')) {
   }
 })();
 
+// ===== HERO SLIDER ROTATOR =====
+function initHeroSlider() {
+  const slides = document.querySelectorAll('.hero-slide');
+  if (!slides || slides.length === 0) return;
+
+  let currentSlide = 0;
+  setInterval(() => {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add('active');
+  }, 4500);
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initHeroSlider);
+} else {
+  initHeroSlider();
+}
+
