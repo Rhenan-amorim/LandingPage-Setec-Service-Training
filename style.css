@@ -1640,11 +1640,6 @@ footer { background: transparent; color: rgba(255,255,255,.65); padding: 4.5rem 
 @media (max-width: 768px) {
   /* Hide navigation bar on mobile */
   #navbar { display: none !important; }
-  
-  /* Hero section adjustments */
-  #home .hero-overlay { background: none !important; }
-  #home .section-bg { opacity: 1 !important; }
-  #home .bg-image { filter: none !important; }
 
   /* Grid adjustments */
   .qs-grid, .gestao-grid, .ead-grid,
