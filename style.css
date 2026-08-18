@@ -248,6 +248,14 @@ section { padding: 5.5rem 0; }
   mix-blend-mode: multiply;
   opacity: 0.75;
 }
+
+.hero-liquid-grid {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  z-index: 1; pointer-events: none;
+  opacity: 0.65;
+}
+
 .hero-pattern {
   position: absolute; inset: 0; opacity: .04; z-index: 1; pointer-events: none;
   background-image: repeating-linear-gradient(

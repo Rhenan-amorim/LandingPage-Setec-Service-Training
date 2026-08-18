@@ -920,3 +920,207 @@ if (document.readyState === 'loading') {
   initHeroSlider();
 }
 
+// ===== LIQUID GRID CANVAS (ORIGINKIT) =====
+function initLiquidGrid() {
+  const canvas = document.getElementById('liquid-grid-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  if (!ctx) return;
+
+  const config = {
+    cellSize: 32,
+    lineWidth: 1,
+    lineColor: 'rgba(0, 255, 238, 0.18)',
+    glowColor: 'rgb(0, 255, 238)',
+    radius: 65,
+    hoverStrength: 0.45,
+    damping: 0.965,
+    waveHeight: 14,
+    step: 8
+  };
+
+  let W = 0, H = 0;
+  let rW = 0, rH = 0, gW = 0, gH = 0;
+  const PAD = 20;
+  let cur = new Float32Array(0);
+  let prev = new Float32Array(0);
+  let live = false;
+
+  function resize() {
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    W = Math.max(1, canvas.clientWidth);
+    H = Math.max(1, canvas.clientHeight);
+    canvas.width = Math.round(W * dpr);
+    canvas.height = Math.round(H * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+    const scale = Math.min(1 / 3, 150 / Math.max(W, H));
+    rW = Math.max(4, Math.floor(W * scale));
+    rH = Math.max(4, Math.floor(H * scale));
+    gW = rW + PAD * 2;
+    gH = rH + PAD * 2;
+    cur = new Float32Array(gW * gH);
+    prev = new Float32Array(gW * gH);
+    live = true;
+  }
+  resize();
+  window.addEventListener('resize', resize, { passive: true });
+
+  function addDrop(cx, cy, radius, strength) {
+    if (!W || !gW) return;
+    const gx = (cx / W) * rW + PAD;
+    const gy = (cy / H) * rH + PAD;
+    const gr = Math.max(1, radius * (rW / W));
+    const loX = 1, loY = 1, hiX = gW - 2, hiY = gH - 2;
+
+    for (let y = Math.max(loY, Math.floor(gy - gr)); y <= Math.min(hiY, Math.ceil(gy + gr)); y++) {
+      for (let x = Math.max(loX, Math.floor(gx - gr)); x <= Math.min(hiX, Math.ceil(gx + gr)); x++) {
+        const d = Math.sqrt((x - gx) ** 2 + (y - gy) ** 2);
+        if (d < gr) cur[y * gW + x] += (1 - d / gr) ** 2 * strength;
+      }
+    }
+    live = true;
+  }
+
+  function updateRipple() {
+    if (!gW || !gH) return;
+    let energy = 0;
+    let n = 0;
+    for (let y = 1; y < gH - 1; y++) {
+      for (let x = 1; x < gW - 1; x++) {
+        const i = y * gW + x;
+        const v = ((cur[(y - 1) * gW + x] + cur[(y + 1) * gW + x] + cur[y * gW + x - 1] + cur[y * gW + x + 1]) * 0.5 - prev[i]) * config.damping;
+        prev[i] = v;
+        energy += v * v;
+        n++;
+      }
+    }
+    const temp = cur; cur = prev; prev = temp;
+    if (energy < n * 2e-6) {
+      live = false;
+      cur.fill(0); prev.fill(0);
+    }
+  }
+
+  function sample(cx, cy) {
+    if (!rW || !W) return 0;
+    const gx = (cx / W) * rW + PAD;
+    const gy = (cy / H) * rH + PAD;
+    const ix = Math.floor(gx), iy = Math.floor(gy);
+    if (ix < 0 || ix >= gW - 1 || iy < 0 || iy >= gH - 1) return 0;
+    const fx = gx - ix, fy = gy - iy;
+    return (
+      cur[iy * gW + ix] * (1 - fx) * (1 - fy) +
+      cur[iy * gW + ix + 1] * fx * (1 - fy) +
+      cur[(iy + 1) * gW + ix] * (1 - fx) * fy +
+      cur[(iy + 1) * gW + ix + 1] * fx * fy
+    );
+  }
+
+  let px = new Float32Array(0), py = new Float32Array(0), pk = new Float32Array(0);
+  function fitScratch(n) {
+    if (px.length >= n) return;
+    px = new Float32Array(n); py = new Float32Array(n); pk = new Float32Array(n);
+  }
+
+  const BUCKETS = 4;
+  const GLOW_FULL = 4;
+
+  function drawGrid() {
+    if (!W || !H) return;
+    ctx.clearRect(0, 0, W, H);
+    const cs = config.cellSize;
+    fitScratch(Math.floor(Math.max(W, H) / config.step) + 2);
+
+    const base = new Path2D();
+    const glow = Array.from({ length: BUCKETS }, () => new Path2D());
+
+    function emit(n) {
+      base.moveTo(px[0], py[0]);
+      for (let i = 1; i < n; i++) base.lineTo(px[i], py[i]);
+      for (let i = 1; i < n; i++) {
+        const k = pk[i] > pk[i - 1] ? pk[i] : pk[i - 1];
+        if (k < 0.06) continue;
+        const b = Math.min(BUCKETS - 1, Math.floor(k * BUCKETS));
+        glow[b].moveTo(px[i - 1], py[i - 1]);
+        glow[b].lineTo(px[i], py[i]);
+      }
+    }
+
+    const numH = Math.ceil(H / cs);
+    const offY = (H - numH * cs) / 2;
+    for (let li = 0; li <= numH; li++) {
+      const baseY = offY + li * cs;
+      let n = 0;
+      for (let x = 0; x <= W; x += config.step) {
+        const cx = x > W ? W : x;
+        const d = sample(cx, baseY) * config.waveHeight;
+        px[n] = cx; py[n] = baseY + d;
+        pk[n] = Math.min(1, Math.abs(d) / GLOW_FULL);
+        n++;
+      }
+      emit(n);
+    }
+
+    const numV = Math.ceil(W / cs);
+    const offX = (W - numV * cs) / 2;
+    for (let li = 0; li <= numV; li++) {
+      const baseX = offX + li * cs;
+      let n = 0;
+      for (let y = 0; y <= H; y += config.step) {
+        const cy = y > H ? H : y;
+        const d = sample(baseX, cy) * config.waveHeight;
+        px[n] = baseX + d; py[n] = cy;
+        pk[n] = Math.min(1, Math.abs(d) / GLOW_FULL);
+        n++;
+      }
+      emit(n);
+    }
+
+    ctx.lineWidth = config.lineWidth;
+    ctx.strokeStyle = config.lineColor;
+    ctx.stroke(base);
+
+    for (let i = 0; i < BUCKETS; i++) {
+      const t = (i + 1) / BUCKETS;
+      ctx.strokeStyle = `rgba(0, 255, 238, ${t * 0.75})`;
+      ctx.lineWidth = config.lineWidth * (1 + t * 0.8);
+      ctx.stroke(glow[i]);
+    }
+  }
+
+  let queued = null;
+  const parent = canvas.parentElement || document.body;
+
+  parent.addEventListener('mousemove', (e) => {
+    const rect = canvas.getBoundingClientRect();
+    queued = { x: e.clientX - rect.left, y: e.clientY - rect.top };
+  }, { passive: true });
+
+  parent.addEventListener('click', (e) => {
+    const rect = canvas.getBoundingClientRect();
+    addDrop(e.clientX - rect.left, e.clientY - rect.top, config.radius * 1.6, 2.5);
+  });
+
+  function loop() {
+    if (queued) {
+      addDrop(queued.x, queued.y, config.radius, config.hoverStrength);
+      queued = null;
+    }
+    if (live) {
+      updateRipple();
+      drawGrid();
+    }
+    requestAnimationFrame(loop);
+  }
+
+  drawGrid();
+  loop();
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initLiquidGrid);
+} else {
+  initLiquidGrid();
+}
+
