@@ -2381,38 +2381,72 @@ section#home.parallax-section {
   opacity: 1 !important;
 }
 
-/* Translucent Button Styling */
-.hero-actions .btn {
-  padding: 0.55rem 1.25rem !important;
-  font-size: 0.82rem !important;
-  border-radius: 6px !important;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+/* ===== RADIANT NEON GLOW BUTTON ===== */
+.btn-neon-glow {
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0.85rem 2.2rem !important;
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  color: #FFFFFF !important;
+  background-color: #05101a !important;
+  border: 1px solid #00FFEE !important;
+  border-radius: 100px !important;
+  cursor: pointer !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+  user-select: none !important;
+  box-sizing: border-box !important;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+  box-shadow: 0 0 18px rgba(0, 255, 238, 0.45), inset 0 0 12px rgba(0, 255, 238, 0.15) !important;
+  z-index: 1 !important;
 }
 
-.hero-actions .btn-primary {
-  background: rgba(206, 142, 82, 0.75) !important;
-  border-color: rgba(206, 142, 82, 0.85) !important;
-  color: #ffffff !important;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
-}
-.hero-actions .btn-primary:hover {
-  background: rgba(206, 142, 82, 0.95) !important;
-  box-shadow: 0 6px 20px rgba(206, 142, 82, 0.4) !important;
-}
-
-.hero-actions .btn-outline {
-  background: rgba(10, 27, 42, 0.35) !important;
-  color: rgba(255, 255, 255, 0.85) !important;
-  border-color: rgba(255, 255, 255, 0.3) !important;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) !important;
+.btn-neon-glow::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: -5px !important;
+  border-radius: 105px !important;
+  background: conic-gradient(from 0deg, rgba(0,255,238,0) 0%, #00FFEE 10%, rgba(0,255,238,0) 35%, rgba(206,142,82,0) 50%, #CE8E52 65%, rgba(206,142,82,0) 85%) !important;
+  filter: blur(6px) !important;
+  z-index: -1 !important;
+  animation: neonGlowSpin 3.5s linear infinite !important;
+  opacity: 0.85 !important;
+  transition: opacity 0.3s ease, filter 0.3s ease !important;
 }
 
-.hero-actions .btn-outline:hover {
-  background: rgba(206, 142, 82, 0.75) !important;
-  color: #ffffff !important;
-  border-color: rgba(206, 142, 82, 0.85) !important;
+.btn-neon-glow::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  border-radius: 100px !important;
+  background: #05101a !important;
+  z-index: -1 !important;
+  transition: background-color 0.3s ease !important;
+}
+
+@keyframes neonGlowSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.btn-neon-glow:hover {
+  color: #00FFEE !important;
+  border-color: #00FFEE !important;
+  transform: scale(1.04) !important;
+  box-shadow: 0 0 30px rgba(0, 255, 238, 0.85), inset 0 0 18px rgba(0, 255, 238, 0.3) !important;
+}
+
+.btn-neon-glow:hover::after {
+  background: #0a1f33 !important;
+}
+
+.btn-neon-glow:hover::before {
+  opacity: 1 !important;
+  filter: blur(10px) !important;
 }
 
 /* ===== NEW ANIMATIONS FOR QUEM SOMOS AND PILLARS ===== */
