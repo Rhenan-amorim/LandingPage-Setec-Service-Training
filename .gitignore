@@ -11,3 +11,4 @@ new_logos_test.html
 
 .vercel
 .env*
+.originkit/
