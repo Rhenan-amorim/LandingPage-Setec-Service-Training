@@ -8,18 +8,20 @@ Fonte original: `components/originkit/ui/roundcarousel.tsx`. Como o produto é u
 
 As 17 referências originais estão em `client-logos.json`. Há 17 itens e 17 imagens únicas no carrossel, com os mesmos arquivos e textos alternativos: Petrobras, Subsea 7, Michelin, PRIO, DOF, CBO, Accelleron, Romaga, VMS Group, Everllence, STX Service Americas, Velko, Aegir Marine, Nitnave Offshore, Baru Offshore, WCM e Lamsa.
 
-Cada imagem usa `object-fit: contain` sobre cartão branco, preservando o desenho completo e as cores. Nenhum arquivo de logo foi editado ou removido. Os mesmos 17 elementos podem alternar entre círculo e grade; não há um subconjunto limitado de marcas. No modo circular, a perspectiva mostra parte do conjunto por vez. O botão “Ver todos os 17 clientes” permite leitura conjunta, e sem JavaScript a grade fica disponível por padrão.
+Cada imagem usa `object-fit: contain` sobre cartão branco, preservando o desenho completo e as cores. Nenhum arquivo de logo foi editado ou removido. No modo circular, a perspectiva mostra parte do conjunto por vez, com todas as 17 marcas no anel. Sem JavaScript a grade fica disponível por padrão.
+
+Após ajuste solicitado pelo usuário, a apresentação final contém apenas o carrossel: setas, play, contador, nome atual, botão de grade e instrução visível foram removidos. As capturas anteriores com controles documentam a primeira versão.
 
 ## Interação
 
-Rotação lenta com pausa explícita, pausa durante hover/foco e suspensão fora da tela ou em aba oculta. Preferência de movimento reduzido evita rotação automática e faz os controles avançarem imediatamente. Setas esquerda/direita, Home, End, anterior/próximo e arraste horizontal. O gesto vertical continua reservado à rolagem da página. Abrir a grade transfere o foco e posiciona a primeira linha na tela.
+Rotação automática lenta, pausa durante hover/foco e suspensão fora da tela ou em aba oculta. Preferência de movimento reduzido evita rotação automática e faz os comandos de teclado avançarem imediatamente. Setas esquerda/direita, Home, End, barra de espaço para pausar e arraste horizontal continuam operáveis, sem controles visuais adicionais. O gesto vertical continua reservado à rolagem da página. A orientação de teclado está disponível apenas para leitores de tela.
 
 ## Verificado antes da publicação
 
-- 17 imagens carregadas, sem referências duplicadas; setas percorreram as 17 empresas e voltaram à Petrobras.
+- 17 imagens carregadas, sem referências duplicadas; após retirada dos controles, teclado novamente percorreu as 17 empresas e completou a volta.
 - Home, End e seta esquerda: Petrobras, Lamsa e WCM confirmados; arraste horizontal mudou o cartão e encerrou a captura do ponteiro.
-- Grade com os mesmos 17 elementos; abertura posicionou a primeira logo em 32 px do topo, sem saltar para a última linha.
-- Inspeção de desktop 1440 px e mobile 390/320 px. Controles ajustados para 250 px na menor tela, sem transbordamento horizontal.
+- Grade testada na primeira versão; o botão de abertura foi posteriormente retirado. A grade permanece como fallback sem JavaScript.
+- Inspeção de desktop 1440 px e mobile 390/320 px. Na versão final, não há botões na seção nem transbordamento horizontal.
 - Console do navegador sem erros/avisos no percurso testado.
 - `node --check round-carousel.js`, `node --check script.js`, `git diff --check` e verificador estrutural das 24 páginas passaram. Os 78 ativos já versionados permaneceram idênticos, incluindo as logos.
 

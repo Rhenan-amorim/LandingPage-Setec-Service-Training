@@ -1,6 +1,6 @@
 /* Originkit Round Carousel: preserve the original ring geometry in HTML/CSS/JS.
  * Source: components/originkit/ui/roundcarousel.tsx, installed with the Originkit CLI.
- * SETEC adaptation: 17 uncropped logos, controls, vertical touch scrolling,
+ * SETEC adaptation: 17 uncropped logos, automatic rotation, vertical touch scrolling,
  * visibility-aware animation and a grid fallback using the same image elements.
  */
 (() => {
@@ -13,25 +13,15 @@
   const count = items.length;
   if (count < 2) return;
   const angle = 360 / count;
-  const previous = root.querySelector('[data-client-prev]');
-  const next = root.querySelector('[data-client-next]');
-  const pause = root.querySelector('[data-client-pause]');
-  const all = root.querySelector('[data-client-all]');
-  const name = root.querySelector('[data-client-name]');
-  const index = root.querySelector('[data-client-index]');
-  const status = root.querySelector('.round-carousel-status');
-  const help = root.querySelector('.round-carousel-help');
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
   let rotation = 0, radius = 0, frame = 0, lastTime = 0, activeIndex = -1;
-  let paused = reducedMotion.matches, visible = false, hover = false, focused = false, grid = false;
+  let paused = false, visible = false, hover = false, focused = false;
   let tween = null, pointer = null;
 
   function updateStatus() {
     const current = ((-Math.round(rotation / angle) % count) + count) % count;
     if (current === activeIndex) return;
     activeIndex = current;
-    name.textContent = items[current].dataset.client;
-    index.textContent = String(current + 1).padStart(2, '0');
     root.dataset.activeClient = String(current);
   }
   function paint() {
@@ -53,7 +43,7 @@
     paint();
   }
   function canAnimate() {
-    return visible && !document.hidden && !grid && !pointer?.dragging &&
+    return visible && !document.hidden && !pointer?.dragging &&
       (tween || (!paused && !hover && !focused && !reducedMotion.matches));
   }
   function schedule() {
@@ -77,54 +67,25 @@
     schedule();
     if (!frame) lastTime = 0;
   }
-  function updatePause() {
-    pause.hidden = grid || reducedMotion.matches;
-    const label = paused ? 'Retomar rotação' : 'Pausar rotação';
-    pause.setAttribute('aria-label', label);
-    pause.title = label;
-    pause.querySelector('path').setAttribute('d', paused ? 'M9 6l9 6-9 6z' : 'M9 6v12M15 6v12');
-    status.setAttribute('aria-live', paused ? 'polite' : 'off');
-  }
   function moveTo(target) {
-    paused = true;
-    updatePause();
     if (reducedMotion.matches) { rotation = target; tween = null; paint(); }
     else tween = { from: rotation, to: target, start: 0 };
     schedule();
   }
   function move(direction) { moveTo((Math.round(rotation / angle) - direction) * angle); }
-  previous.addEventListener('click', () => move(-1));
-  next.addEventListener('click', () => move(1));
   stage.addEventListener('keydown', event => {
-    if (grid || !['ArrowLeft','ArrowRight','Home','End'].includes(event.key)) return;
+    if (!['ArrowLeft','ArrowRight','Home','End',' '].includes(event.key)) return;
     event.preventDefault();
     if (event.key === 'ArrowLeft') move(-1);
     if (event.key === 'ArrowRight') move(1);
     if (event.key === 'Home') moveTo(0);
     if (event.key === 'End') moveTo(-(count - 1) * angle);
-  });
-  pause.addEventListener('click', () => { paused = !paused; tween = null; updatePause(); schedule(); });
-  all.addEventListener('click', () => {
-    grid = !grid;
-    paused = true;
-    tween = null;
-    root.classList.toggle('is-grid', grid);
-    all.setAttribute('aria-expanded', String(grid));
-    all.textContent = grid ? 'Voltar ao carrossel' : 'Ver todos os 17 clientes';
-    pause.hidden = grid;
-    help.hidden = grid;
-    stage.tabIndex = grid ? -1 : 0;
-    stage.setAttribute('aria-label', grid ? 'Todos os 17 clientes' : 'Carrossel de logotipos');
-    updatePause();
-    resize();
-    schedule();
-    stage.focus({ preventScroll: true });
-    requestAnimationFrame(() => stage.scrollIntoView({ block: 'start', behavior: reducedMotion.matches ? 'instant' : 'smooth' }));
+    if (event.key === ' ') { paused = !paused; schedule(); }
   });
 
   // Lock dragging to the horizontal axis; leave page scroll and pinch zoom native.
   stage.addEventListener('pointerdown', event => {
-    if (grid || event.button !== 0) return;
+    if (event.button !== 0) return;
     pointer = { id: event.pointerId, x: event.clientX, y: event.clientY, lastX: event.clientX, dragging: false };
   });
   stage.addEventListener('pointermove', event => {
@@ -135,8 +96,8 @@
       if (Math.abs(dy) > Math.abs(dx)) { pointer = null; return; }
       pointer.dragging = true;
       stage.setPointerCapture(event.pointerId);
-      paused = true; tween = null;
-      updatePause(); root.classList.add('is-dragging'); schedule();
+      tween = null;
+      root.classList.add('is-dragging'); schedule();
     }
     rotation += (event.clientX - pointer.lastX) * .15;
     pointer.lastX = event.clientX;
@@ -160,7 +121,7 @@
   });
   document.addEventListener('visibilitychange', schedule);
   reducedMotion.addEventListener('change', () => {
-    if (reducedMotion.matches) { paused = true; tween = null; updatePause(); }
+    if (reducedMotion.matches) tween = null;
     schedule();
   });
   if ('IntersectionObserver' in window) {
@@ -169,9 +130,6 @@
   if ('ResizeObserver' in window) new ResizeObserver(resize).observe(stage);
   else window.addEventListener('resize', resize, { passive: true });
   root.classList.add('is-enhanced');
-  root.querySelector('.round-carousel-toolbar').hidden = false;
-  help.hidden = false;
   resize();
-  updatePause();
   schedule();
 })();

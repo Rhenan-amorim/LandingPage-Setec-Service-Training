@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=DM+Mono:ital,wght@0,400;0,500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=clients-2" />
+  <link rel="stylesheet" href="style.css?v=clients-auto-1" />
 
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -168,18 +168,7 @@
           <li class="round-client" data-client="Lamsa"><div class="round-client-front"><img src="logos/lamsa.png" alt="Lamsa" width="1024" height="256" loading="lazy" decoding="async" draggable="false" /></div><div class="round-client-back" aria-hidden="true"></div></li>
         </ul></div>
       </div>
-      <div class="round-carousel-toolbar" hidden>
-        <div class="round-carousel-pagination">
-          <button class="round-carousel-button" type="button" data-client-prev aria-label="Cliente anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 6l-6 6 6 6" /></svg></button>
-          <p class="round-carousel-status" aria-live="off"><span data-client-name>Petrobras</span><span class="round-carousel-count"><span data-client-index>01</span> / 17</span></p>
-          <button class="round-carousel-button" type="button" data-client-next aria-label="Próximo cliente"><svg class="arrow-next" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 6l-6 6 6 6" /></svg></button>
-        </div>
-        <div class="round-carousel-actions">
-          <button class="round-carousel-button round-carousel-pause" type="button" data-client-pause aria-label="Pausar rotação"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6v12M15 6v12" /></svg></button>
-          <button class="round-carousel-all" type="button" data-client-all aria-expanded="false">Ver todos os 17 clientes</button>
-        </div>
-      </div>
-      <p id="clients-carousel-help" class="round-carousel-help" hidden>Arraste para explorar ou use as setas do teclado.</p>
+      <span id="clients-carousel-help" class="sr-only">Arraste para explorar. Use as setas, Home ou End no teclado. A barra de espaço pausa a rotação.</span>
     </div>
   </div>
 </section>
@@ -915,7 +904,7 @@
 </div>
 
 <script src="script.js?v=clients-1" defer></script>
-<script src="round-carousel.js?v=clients-2" defer></script>
+<script src="round-carousel.js?v=clients-auto-1" defer></script>
 </body>
 </html>
 

@@ -27,7 +27,9 @@ class Document(HTMLParser):
             self.refs.extend(x.strip().split()[0] for x in a['srcset'].split(','))
         if 'dock-link' in classes: self.nav.append(a.get('data-section'))
         if tag not in VOID:
-            self.stack.append({'tag':tag,'text':[], 'capture':(tag in COPY_TAGS or bool(classes & COPY_CLASSES)) and not any(x['tag']=='nav' for x in self.stack)})
+            # Navigation and carousel controls are UI chrome, not marketing copy.
+            chrome = {'round-carousel-toolbar','round-carousel-help'}
+            self.stack.append({'tag':tag,'classes':classes,'text':[], 'capture':(tag in COPY_TAGS or bool(classes & COPY_CLASSES)) and not classes & chrome and not any(x['tag']=='nav' or x['classes'] & chrome for x in self.stack)})
     def handle_startendtag(self, tag, attrs):
         self.handle_starttag(tag,attrs)
         if tag not in VOID: self.handle_endtag(tag)
