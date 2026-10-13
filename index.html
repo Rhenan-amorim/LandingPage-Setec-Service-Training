@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=DM+Mono:ital,wght@0,400;0,500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=69" />
+  <link rel="stylesheet" href="style.css?v=mobile-nav-1" />
 
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -50,81 +50,32 @@
   </script>
   <link rel="icon" type="image/png" href="logos/favicon-square-blue.png" />
 </head>
-<body>
+<body class="home-page">
 
-<!-- ============ WHATSAPP FLOAT ============ -->
-<a href="https://wa.me/5521982874662" target="_blank" rel="noopener" class="wa-float" aria-label="WhatsApp">
-  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-  </svg>
-</a>
-
-<!-- ============ MOBILE MENU ============ -->
-<div id="mobile-menu" role="dialog" aria-label="Menu de navegação">
-  <button class="menu-close" id="menu-close" aria-label="Fechar menu">✕</button>
-  <a href="#home" class="mobile-link">Início</a>
-  <a href="#quem-somos" class="mobile-link">Quem Somos</a>
-  <a href="#servicos" class="mobile-link">Serviços</a>
-  <a href="#treinamentos" class="mobile-link">Treinamentos</a>
-  <a href="#nr-cursos" class="mobile-link">Cursos NR</a>
-  <a href="#contato" class="mobile-link">Contato</a>
-</div>
-
-<!-- ============ NAVBAR ============ -->
-<nav id="navbar" aria-label="Navegação principal">
-  <div class="container">
-    <div class="nav-inner">
-      <a href="#home" class="nav-logo" aria-label="Grupo SETEC - Início">
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<header class="site-header"><div class="container header-inner"><a href="#home" class="nav-logo" aria-label="Grupo SETEC - Início">
         <img class="logo-default" src="logos/gs-symbol-white.png" alt="Grupo SETEC" />
-        <img class="logo-scrolled" src="logos/gs-symbol-white.png" alt="Grupo SETEC" />
         <svg viewBox="68 0 152 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <!-- GRUPO SETEC text em versão branca -->
           <text x="68" y="22" font-family="Outfit, sans-serif" font-weight="400" font-size="9" fill="#FFFFFF" letter-spacing="2">GRUPO</text>
           <text x="68" y="40" font-family="Outfit, sans-serif" font-weight="700" font-size="18" fill="#FFFFFF" letter-spacing="0.5">SETEC</text>
           <text x="68" y="52" font-family="Outfit, sans-serif" font-weight="400" font-size="7" fill="#FFFFFF" letter-spacing="3">SERVICE &amp; TRAINING</text>
         </svg>
-      </a>
-
-      <ul class="nav-links" role="list">
-        <li><a href="#quem-somos">Quem Somos</a></li>
-        <li><a href="#servicos">Serviços</a></li>
-        <li><a href="#gestao">Plataforma</a></li>
-        <li><a href="#treinamentos">Treinamentos</a></li>
-        <li><a href="#nr-cursos">Cursos NR</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
-
-      <div class="nav-right">
-        <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-    </div>
-  </div>
-</nav>
-<div class="scroll-container">
+      </a><details class="mobile-menu"><summary aria-label="Mais opções de navegação" aria-controls="mobile-menu-links"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14M5 12h14M5 17h14" /></svg></summary><nav id="mobile-menu-links" class="mobile-menu-panel" aria-label="Navegação complementar"><a href="#home" data-section="home"><svg class="ui-icon" aria-hidden="true"><use href="img/ui-icons.svg#home"></use></svg><span>Início</span></a><a href="#quem-somos" data-section="quem-somos"><svg class="ui-icon" aria-hidden="true"><use href="img/ui-icons.svg#company"></use></svg><span>Quem Somos</span></a><a href="#gestao" data-section="gestao"><svg class="ui-icon" aria-hidden="true"><use href="img/ui-icons.svg#platform"></use></svg><span>Plataforma</span></a></nav></details></div></header>
+<nav class="glass-dock" aria-label="Navegação principal"><span class="dock-indicator" aria-hidden="true"></span><a class="dock-link" href="#home" data-section="home"><svg class="ui-icon" aria-hidden="true"><use href="img/ui-icons.svg#home"></use></svg><span>Início</span></a>
+<a class="dock-link" href="#quem-somos" data-section="quem-somos"><svg class="ui-icon" aria-hidden="true"><use href="img/ui-icons.svg#company"></use></svg><span>Quem Somos</span></a>
+<a class="dock-link" href="#servicos" data-section="servicos"><svg class="ui-icon" aria-hidden="true"><use href="img/ui-icons.svg#services"></use></svg><span>Serviços</span></a>
+<a class="dock-link" href="#gestao" data-section="gestao"><svg class="ui-icon" aria-hidden="true"><use href="img/ui-icons.svg#platform"></use></svg><span>Plataforma</span></a>
+<a class="dock-link" href="#treinamentos" data-section="treinamentos"><svg class="ui-icon" aria-hidden="true"><use href="img/ui-icons.svg#training"></use></svg><span>Treinamentos</span></a>
+<a class="dock-link" href="#nr-cursos" data-section="nr-cursos"><svg class="ui-icon" aria-hidden="true"><use href="img/ui-icons.svg#book"></use></svg><span>Cursos NR</span></a>
+<a class="dock-link" href="#contato" data-section="contato"><svg class="ui-icon" aria-hidden="true"><use href="img/ui-icons.svg#contact"></use></svg><span>Contato</span></a></nav>
+<main class="scroll-container" id="conteudo" tabindex="-1">
 
 <!-- ============ HERO ============ -->
 <section id="home" class="parallax-section" aria-label="Página inicial">
-  <div class="section-bg hero-slider">
-    <div class="hero-slide active" style="background-image: url('img/hero-bg-1.jpg');"></div>
-    <div class="hero-slide" style="background-image: url('img/hero-bg-2.jpg');"></div>
-    <div class="hero-slide" style="background-image: url('img/hero-bg-3.jpg');"></div>
-    <div class="hero-slide" style="background-image: url('img/hero-bg-4.jpg');"></div>
-    <div class="hero-slide" style="background-image: url('img/hero-bg-5.jpg');"></div>
-  </div>
-  <div class="hero-overlay"></div>
-  <div class="hero-blue-tint"></div>
-
-  <!-- Logo mobile: apenas visível em mobile, centralizada no topo -->
-  <div class="hero-mobile-logo" aria-hidden="true">
-    <img src="logos/gs-symbol.png" alt="Grupo SETEC" class="hero-mobile-logo-img" />
-    <svg viewBox="68 0 152 60" fill="none" xmlns="http://www.w3.org/2000/svg" class="hero-mobile-logo-text">
-      <text x="68" y="22" font-family="Outfit, sans-serif" font-weight="400" font-size="9" fill="#FFFFFF" letter-spacing="2">GRUPO</text>
-      <text x="68" y="40" font-family="Outfit, sans-serif" font-weight="700" font-size="18" fill="#FFFFFF" letter-spacing="0.5">SETEC</text>
-      <text x="68" y="52" font-family="Outfit, sans-serif" font-weight="400" font-size="7" fill="#FFFFFF" letter-spacing="3">SERVICE &amp; TRAINING</text>
-    </svg>
-  </div>
+  <picture class="hero-image">
+    <img src="img/hero-bg-2.jpg" srcset="img/hero-bg-2.jpg 764w, img/ct-cabine-vidro.jpg 1792w" sizes="(max-width: 700px) 100vw, 70vw" width="1792" height="2400" alt="Cabine de Vidro de 2 Andares" fetchpriority="high" decoding="async" />
+  </picture>
 
   <div class="container hero-content section-content">
     <h1 class="hero-title">
@@ -136,29 +87,19 @@
       Treinamentos práticos em equipamentos reais, operações de campo especializadas com equipes IRATA e locação de mão de obra qualificada.
     </p>
     <div class="hero-actions">
-      <div class="neon-glow-wrapper">
-        <div class="neon-glow-rings" aria-hidden="true">
-          <span class="neon-ring ring-1"></span>
-          <span class="neon-ring ring-2"></span>
-          <span class="neon-ring ring-3"></span>
-          <span class="neon-ring ring-4"></span>
-          <span class="neon-ring ring-5"></span>
-          <span class="neon-ring ring-6"></span>
-        </div>
-        <a href="#simulador" class="btn btn-neon-glow">Conhecer Infraestrutura ↓</a>
-      </div>
+      <a href="#simulador" class="btn btn-primary">Conhecer Infraestrutura ↓</a>
+      <a href="https://wa.me/5521982874662" target="_blank" rel="noopener noreferrer" class="hero-whatsapp" aria-label="WhatsApp">
+  <svg aria-hidden="true" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+  </svg>
+</a>
     </div>
   </div>
-  <a href="#quem-somos" class="hero-scroll" aria-label="Rolar para baixo">
-    <span class="hero-scroll-mouse"><span></span></span>
-    <span class="hero-scroll-txt">Explorar</span>
-  </a>
 </section>
 
 <!-- ============ QUEM SOMOS ============ -->
 <section id="quem-somos" class="parallax-section" aria-labelledby="qs-title">
-  <div class="section-bg" style="background-image: url('img/art-quemsomos.jpg?v=2')"></div>
-  <div class="section-overlay"></div>
+<div class="section-overlay"></div>
   <div class="container section-content">
     <div class="qs-grid">
       <!-- Text content on the Left -->
@@ -178,18 +119,18 @@
       </div>
 
       <!-- Experience tags and reference labels on the Right -->
-      <div class="qs-visual reveal reveal-delay-1">
+      <div class="qs-visual reveal reveal-delay-1"><img class="team-photo" src="img/hero-bg-3.jpg" alt="Equipe Grupo SETEC" width="1024" height="576" loading="lazy" decoding="async" />
         <div class="qs-pillars reveal reveal-stagger">
           <div class="pillar">
-            <span class="pillar-icon">⏱️</span>
+            <span class="pillar-icon"><svg class="ui-icon" aria-hidden="true"><use href="img/ui-icons.svg#clock"></use></svg></span>
             <span class="pillar-text"><strong>14+ Anos de Experiência</strong> — Capacitação, consultoria e locação de mão de obra técnica para os setores marítimo e industrial em todo o Brasil.</span>
           </div>
           <div class="pillar">
-            <span class="pillar-icon">🏆</span>
+            <span class="pillar-icon"><svg class="ui-icon" aria-hidden="true"><use href="img/ui-icons.svg#award"></use></svg></span>
             <span class="pillar-text">Referência nacional em segurança do trabalho marítima e industrial</span>
           </div>
           <div class="pillar">
-            <span class="pillar-icon">📋</span>
+            <span class="pillar-icon"><svg class="ui-icon" aria-hidden="true"><use href="img/ui-icons.svg#shield"></use></svg></span>
             <span class="pillar-text">Conformidade total com NRs, ABNT e demais normas técnicas vigentes</span>
           </div>
         </div>
@@ -197,18 +138,18 @@
     </div>
   </div>
 </section>
-<section id="clientes" aria-labelledby="clientes-title" style="background-color: var(--cinza-claro); padding-top: 4rem; padding-bottom: 4rem;">
+<section id="clientes" aria-labelledby="clientes-title">
   <div class="container section-content flex flex-col justify-center">
     <div class="clientes-header reveal" style="text-align: center;">
-      <span class="label" style="color: var(--cobre);">Nossos Clientes</span>
-      <h2 class="section-title" id="clientes-title" style="color: var(--azul);">Empresas que confiam no Grupo SETEC</h2>
-      <p class="section-sub" style="color: var(--noite);">Parceiros estratégicos dos maiores nomes do setor marítimo, industrial e energético do Brasil.</p>
+      <span class="label">Nossos Clientes</span>
+      <h2 class="section-title" id="clientes-title" >Empresas que confiam no Grupo SETEC</h2>
+      <p class="section-sub" >Parceiros estratégicos dos maiores nomes do setor marítimo, industrial e energético do Brasil.</p>
     </div>
-    
+
     <div class="carousel-container mt-8" style="overflow: hidden; width: 100%; position: relative;">
       <!-- Row 1: Logos (Scrolls Left) -->
       <div class="carousel-wrap" style="margin-bottom: 2rem;">
-        <div class="carousel-track scroll-left" aria-label="Carrossel de logotipos de clientes - Linha 1">
+        <div class="carousel-track scroll-left" aria-label="Logotipos de clientes - Grupo 1">
           <div class="client-card"><img src="logos/petrobras.png" alt="Petrobras" loading="lazy"/></div>
           <div class="client-card"><img src="logos/subsea7.png" alt="Subsea 7" loading="lazy"/></div>
           <div class="client-card"><img src="logos/michelin.png" alt="Michelin" loading="lazy"/></div>
@@ -218,20 +159,20 @@
           <div class="client-card"><img src="logos/accelleron.png" alt="Accelleron" loading="lazy"/></div>
           <div class="client-card"><img src="logos/romaga.png" alt="Romaga" loading="lazy"/></div>
           <!-- Duplicated for infinite loop -->
-          <div class="client-card"><img src="logos/petrobras.png" alt="Petrobras" loading="lazy"/></div>
-          <div class="client-card"><img src="logos/subsea7.png" alt="Subsea 7" loading="lazy"/></div>
-          <div class="client-card"><img src="logos/michelin.png" alt="Michelin" loading="lazy"/></div>
-          <div class="client-card"><img src="logos/prio.png" alt="PRIO" loading="lazy"/></div>
-          <div class="client-card"><img src="logos/dof.png" alt="DOF" loading="lazy"/></div>
-          <div class="client-card"><img src="logos/cbo.png" alt="CBO" loading="lazy"/></div>
-          <div class="client-card"><img src="logos/accelleron.png" alt="Accelleron" loading="lazy"/></div>
-          <div class="client-card"><img src="logos/romaga.png" alt="Romaga" loading="lazy"/></div>
+
+
+
+
+
+
+
+
         </div>
       </div>
-      
+
       <!-- Row 2: Logos (Scrolls Right) -->
       <div class="carousel-wrap">
-        <div class="carousel-track scroll-right" aria-label="Carrossel de logotipos de clientes - Linha 2">
+        <div class="carousel-track scroll-right" aria-label="Logotipos de clientes - Grupo 2">
           <div class="client-card"><img src="logos/vms.png" alt="VMS Group" loading="lazy"/></div>
           <div class="client-card"><img src="logos/everllence.png" alt="Everllence" loading="lazy"/></div>
           <div class="client-card"><img src="logos/stx.png" alt="STX Service Americas" loading="lazy"/></div>
@@ -242,15 +183,15 @@
           <div class="client-card"><img src="logos/wcm.png" alt="WCM" loading="lazy"/></div>
           <div class="client-card"><img src="logos/lamsa.png" alt="Lamsa" loading="lazy" class="logo-scale-up"/></div>
           <!-- Duplicated for infinite loop -->
-          <div class="client-card"><img src="logos/vms.png" alt="VMS Group" loading="lazy"/></div>
-          <div class="client-card"><img src="logos/everllence.png" alt="Everllence" loading="lazy"/></div>
-          <div class="client-card"><img src="logos/stx.png" alt="STX Service Americas" loading="lazy"/></div>
-          <div class="client-card"><img src="logos/velko.png" alt="Velko" loading="lazy"/></div>
-          <div class="client-card"><img src="logos/aegir.png" alt="Aegir Marine" loading="lazy"/></div>
-          <div class="client-card"><img src="logos/nitnave.png" alt="Nitnave Offshore" loading="lazy"/></div>
-          <div class="client-card"><img src="logos/baru.png" alt="Baru Offshore" loading="lazy"/></div>
-          <div class="client-card"><img src="logos/wcm.png" alt="WCM" loading="lazy"/></div>
-          <div class="client-card"><img src="logos/lamsa.png" alt="Lamsa" loading="lazy" class="logo-scale-up"/></div>
+
+
+
+
+
+
+
+
+
         </div>
       </div>
     </div>
@@ -259,8 +200,7 @@
 
 <!-- ============ POR QUE ESCOLHER ============ -->
 <section id="vantagens" class="parallax-section" aria-labelledby="vantagens-title">
-  <div class="section-bg" style="background-image: url('img/bg-simulador.jpg'); filter: brightness(0.2);"></div>
-  <div class="section-overlay"></div>
+<div class="section-overlay"></div>
   <div class="container section-content">
     <span class="label">Diferenciais</span>
     <h2 class="section-title text-white" id="vantagens-title">Por que escolher o Grupo SETEC?</h2>
@@ -314,8 +254,7 @@
 
 <!-- ============ O QUE FAZEMOS ============ -->
 <section id="servicos" class="parallax-section" aria-labelledby="servicos-title">
-  <div class="section-bg" style="background-image: url('img/bg-servicos-3d.jpg');"></div>
-  <div class="section-overlay" style="background: linear-gradient(135deg, rgba(14,35,52,0.92) 0%, rgba(14,35,52,0.75) 40%, rgba(14,35,52,0.88) 100%);"></div>
+<div class="section-overlay" style="background: linear-gradient(135deg, rgba(14,35,52,0.92) 0%, rgba(14,35,52,0.75) 40%, rgba(14,35,52,0.88) 100%);"></div>
   <div class="container section-content">
 
     <!-- Header -->
@@ -329,58 +268,58 @@
     <div class="sv-bento reveal reveal-stagger">
 
       <!-- Card 1: Featured (large) -->
-      <div class="sv-card">
+      <a class="sv-card" href="#locacao">
         <span class="sv-card__num">01</span>
-        <div class="sv-card__icon">🏗️</div>
+        <div class="sv-card__icon"><svg class="ui-icon" aria-hidden="true"><use href="img/ui-icons.svg#people"></use></svg></div>
         <h3 class="sv-card__title">Locação de Mão de Obra</h3>
         <p class="sv-card__desc">Profissionais técnicos qualificados para operações onshore e offshore — Técnicos em Segurança, Enfermeiros do Trabalho, Equipes de Resgate e muito mais.</p>
         <div class="sv-card__accent"></div>
-      </div>
+      </a>
 
       <!-- Card 2 -->
-      <div class="sv-card">
+      <a class="sv-card" href="#nr-cursos">
         <span class="sv-card__num">02</span>
-        <div class="sv-card__icon">📚</div>
+        <div class="sv-card__icon"><svg class="ui-icon" aria-hidden="true"><use href="img/ui-icons.svg#book"></use></svg></div>
         <h3 class="sv-card__title">Treinamentos Normativos</h3>
         <p class="sv-card__desc">Cursos presenciais, in-company e EAD homologados e em conformidade com as Normas Regulamentadoras (NRs), garantindo a regularidade legal de sua equipe.</p>
         <div class="sv-card__accent"></div>
-      </div>
+      </a>
 
       <!-- Card 3 -->
-      <div class="sv-card">
+      <a class="sv-card" href="#gestao">
         <span class="sv-card__num">03</span>
-        <div class="sv-card__icon">💻</div>
+        <div class="sv-card__icon"><svg class="ui-icon" aria-hidden="true"><use href="img/ui-icons.svg#platform"></use></svg></div>
         <h3 class="sv-card__title">Plataforma de Gestão</h3>
         <p class="sv-card__desc">Sistema próprio de gestão de treinamentos com alertas automáticos por WhatsApp e e-mail, calendário de NRs, controle de EPI, ASO e certificados rastreáveis.</p>
         <div class="sv-card__accent"></div>
-      </div>
+      </a>
 
       <!-- Card 4 -->
-      <div class="sv-card">
+      <a class="sv-card" href="#ead">
         <span class="sv-card__num">04</span>
-        <div class="sv-card__icon">🎓</div>
+        <div class="sv-card__icon"><svg class="ui-icon" aria-hidden="true"><use href="img/ui-icons.svg#training"></use></svg></div>
         <h3 class="sv-card__title">Plataforma EAD</h3>
         <p class="sv-card__desc">Treinamentos de NRs online com interface acessível, conformidade legal garantida e emissão de certificados válidos em todo o território nacional.</p>
         <div class="sv-card__accent"></div>
-      </div>
+      </a>
 
       <!-- Card 5 -->
-      <div class="sv-card">
+      <a class="sv-card" href="#simulador">
         <span class="sv-card__num">05</span>
-        <div class="sv-card__icon">🏛️</div>
+        <div class="sv-card__icon"><svg class="ui-icon" aria-hidden="true"><use href="img/ui-icons.svg#company"></use></svg></div>
         <h3 class="sv-card__title">Centro de Treinamento Avançado</h3>
         <p class="sv-card__desc">Centros de Treinamento mais completos do setor naval e offshore, equipado com conjunto real de propulsão naval, composto por motor marítimo, redutora, gerador e propulsor. Com operações em campo em equipes de alpinistas industriais IRATA, equipes de resgate industrial com IRATA e apoio de solo.</p>
         <div class="sv-card__accent"></div>
-      </div>
+      </a>
 
       <!-- Card 6: Featured (large) -->
-      <div class="sv-card">
+      <a class="sv-card" href="#contato">
         <span class="sv-card__num">06</span>
-        <div class="sv-card__icon">🔍</div>
+        <div class="sv-card__icon"><svg class="ui-icon" aria-hidden="true"><use href="img/ui-icons.svg#shield"></use></svg></div>
         <h3 class="sv-card__title">Consultoria em SST</h3>
         <p class="sv-card__desc">Assessoria especializada em Segurança e Saúde no Trabalho para adequação às normas, gestão de riscos e implementação de programas preventivos.</p>
         <div class="sv-card__accent"></div>
-      </div>
+      </a>
 
     </div>
   </div>
@@ -388,8 +327,7 @@
 
 <!-- ============ LOCAÇÃO DE MÃO DE OBRA ============ -->
 <section id="locacao" class="parallax-section" aria-labelledby="locacao-title">
-  <div class="section-bg" style="background-image: url('img/art-locacao.jpg')"></div>
-  <div class="section-overlay"></div>
+<div class="section-overlay"></div>
   <div class="container section-content">
     <div class="locacao-text-wrap text-left reveal mb-6">
       <span class="label">Locação de Mão de Obra</span>
@@ -433,32 +371,31 @@
 
 <!-- ============ SIMULADOR ============ -->
 <section id="simulador" class="parallax-section" aria-labelledby="sim-title">
-  <div class="section-bg" style="background-image: url('img/bg-simulador.jpg')"></div>
-  <div class="section-overlay"></div>
+<div class="section-overlay"></div>
   <div class="container section-content">
     <div class="sim-grid">
       <div class="sim-features reveal">
         <span class="label">Tecnologia em Campo</span>
         <h2 class="section-title text-white" id="sim-title">Centro de Treinamento &amp; Tecnologia</h2>
         <p class="section-sub text-light">Estrutura física de alta performance e unidade móvel avançada para capacitar sua equipe com máxima conformidade técnica e prática.</p>
-        
+
         <div class="sim-feature-list mt-6 space-y-4">
           <div class="sim-feature">
-            <div class="sf-icon">🏢</div>
+            <div class="sf-icon"><svg class="ui-icon" aria-hidden="true"><use href="img/ui-icons.svg#company"></use></svg></div>
             <div class="sf-text">
               <p class="sf-title">Instalações de Excelência</p>
               <p class="sf-desc">O Grupo SETEC possui um dos Centros de Treinamento mais completos do setor naval e offshore, equipado com conjunto real de propulsão naval, composto por motor marítimo, redutora, gerador e propulsor. Essa estrutura permite que os treinamentos sejam realizados em equipamentos reais, proporcionando aos alunos uma experiência prática muito próxima da realidade operacional.</p>
             </div>
           </div>
           <div class="sim-feature">
-            <div class="sf-icon">⚓</div>
+            <div class="sf-icon"><svg class="ui-icon" aria-hidden="true"><use href="img/ui-icons.svg#anchor"></use></svg></div>
             <div class="sf-text">
               <p class="sf-title">Operações em campo</p>
               <p class="sf-desc">O Grupo SETEC oferece soluções especializadas para atender às demandas dos setores naval, offshore e industrial, disponibilizando profissionais altamente qualificados para operações de campo, como equipes de alpinistas industriais IRATA, equipes de resgate industrial com IRATA e apoio de solo, além de locação de técnicos de segurança do trabalho para operações onshore e offshore.</p>
             </div>
           </div>
           <div class="sim-feature">
-            <div class="sf-icon">⚡</div>
+            <div class="sf-icon"><svg class="ui-icon" aria-hidden="true"><use href="img/ui-icons.svg#bolt"></use></svg></div>
             <div class="sf-text">
               <p class="sf-title">Diferencial do Grupo SETEC</p>
               <p class="sf-desc">O Grupo SETEC proporciona soluções completas para o desenvolvimento de pessoas e suporte às operações industriais. Com infraestrutura moderna, equipamentos reais, instrutores experientes e equipes técnicas altamente capacitadas, entregamos conhecimento prático, segurança e resultados para os setores naval, offshore e industrial.</p>
@@ -469,23 +406,23 @@
       <div class="sim-visual reveal reveal-right">
         <div class="bento-gallery">
           <div class="bento-item item-large">
-            <img src="img/ct-cabine-vidro.jpg" alt="Cabine de Vidro de 2 Andares" loading="lazy">
+            <a class="gallery-link" href="img/ct-cabine-vidro.jpg" aria-label="Cabine de Vidro de 2 Andares"><img src="img/ct-cabine-vidro.jpg" alt="Cabine de Vidro de 2 Andares" loading="lazy" width="1792" height="2400" decoding="async"><svg class="ui-icon" aria-hidden="true"><use href="img/ui-icons.svg#expand"></use></svg></a>
             <div class="bento-overlay"><span>Cabine de Vidro de 2 Andares</span></div>
           </div>
           <div class="bento-item item-facade">
-            <img src="img/ct-fachada.jpg" alt="Sede Grupo SETEC" loading="lazy">
+            <a class="gallery-link" href="img/ct-fachada.jpg" aria-label="Sede Grupo SETEC"><img src="img/ct-fachada.jpg" alt="Sede Grupo SETEC" loading="lazy" width="1792" height="2400" decoding="async"><svg class="ui-icon" aria-hidden="true"><use href="img/ui-icons.svg#expand"></use></svg></a>
             <div class="bento-overlay"><span>Sede Grupo SETEC</span></div>
           </div>
           <div class="bento-item item-field">
-            <img src="img/ct-calibracao.jpg" alt="Laboratório de Calibração" loading="lazy">
+            <a class="gallery-link" href="img/ct-calibracao.jpg" aria-label="Laboratório de Calibração"><img src="img/ct-calibracao.jpg" alt="Laboratório de Calibração" loading="lazy" width="900" height="1600" decoding="async"><svg class="ui-icon" aria-hidden="true"><use href="img/ui-icons.svg#expand"></use></svg></a>
             <div class="bento-overlay"><span>Laboratório de Calibração</span></div>
           </div>
           <div class="bento-item item-engine">
-            <img src="img/ct-motor-mak.jpg" alt="Motor Naval MaK" loading="lazy">
+            <a class="gallery-link" href="img/ct-motor-mak.jpg" aria-label="Motor Naval MaK"><img src="img/ct-motor-mak.jpg" alt="Motor Naval MaK" loading="lazy" width="1600" height="900" decoding="async"><svg class="ui-icon" aria-hidden="true"><use href="img/ui-icons.svg#expand"></use></svg></a>
             <div class="bento-overlay"><span>Motor Naval MaK</span></div>
           </div>
           <div class="bento-item item-calibration">
-            <img src="img/ct-operacoes-campo.jpg" alt="Operações em Campo (IRATA)" loading="lazy">
+            <a class="gallery-link" href="img/ct-operacoes-campo.jpg" aria-label="Operações em Campo (IRATA)"><img src="img/ct-operacoes-campo.jpg" alt="Operações em Campo (IRATA)" loading="lazy" width="575" height="1024" decoding="async"><svg class="ui-icon" aria-hidden="true"><use href="img/ui-icons.svg#expand"></use></svg></a>
             <div class="bento-overlay"><span>Operações em Campo (IRATA)</span></div>
           </div>
         </div>
@@ -496,23 +433,22 @@
 
 <!-- ============ GESTÃO DE TREINAMENTOS ============ -->
 <section id="gestao" class="parallax-section" aria-labelledby="gestao-title">
-  <div class="section-bg" style="background-image: url('img/bg-gestao.jpg')"></div>
-  <div class="section-overlay"></div>
+<div class="section-overlay"></div>
   <div class="container section-content">
     <div class="gestao-grid">
-      <div class="gestao-content reveal">
+      <figure class="platform-visual"><img src="img/bg-gestao.jpg" alt="" loading="lazy" decoding="async" /></figure><div class="gestao-content reveal">
         <span class="label">Plataforma Digital</span>
         <h2 class="section-title text-white" id="gestao-title">Sistema de Gestão de Treinamentos</h2>
         <p class="section-sub text-light">Nosso software próprio, com suporte trilíngue (Português, Inglês e Espanhol), automatiza prazos e garante conformidade contínua em cada etapa.</p>
         <div class="func-list">
-          <div class="func-item"><span>📅</span> Gestão de NRs</div>
-          <div class="func-item"><span>🗓️</span> Calendário</div>
-          <div class="func-item"><span>📊</span> Relatórios</div>
-          <div class="func-item"><span>👷</span> Controle EPI</div>
-          <div class="func-item"><span>🏥</span> Controle ASO</div>
-          <div class="func-item"><span>👥</span> Funcionários</div>
-          <div class="func-item"><span>📋</span> OS Digital</div>
-          <div class="func-item"><span>📩</span> Alertas WhatsApp</div>
+          <div class="func-item"><span><svg class="ui-icon" aria-hidden="true"><use href="img/ui-icons.svg#book"></use></svg></span> Gestão de NRs</div>
+          <div class="func-item"><span><svg class="ui-icon" aria-hidden="true"><use href="img/ui-icons.svg#calendar"></use></svg></span> Calendário</div>
+          <div class="func-item"><span><svg class="ui-icon" aria-hidden="true"><use href="img/ui-icons.svg#platform"></use></svg></span> Relatórios</div>
+          <div class="func-item"><span><svg class="ui-icon" aria-hidden="true"><use href="img/ui-icons.svg#shield"></use></svg></span> Controle EPI</div>
+          <div class="func-item"><span><svg class="ui-icon" aria-hidden="true"><use href="img/ui-icons.svg#shield"></use></svg></span> Controle ASO</div>
+          <div class="func-item"><span><svg class="ui-icon" aria-hidden="true"><use href="img/ui-icons.svg#people"></use></svg></span> Funcionários</div>
+          <div class="func-item"><span><svg class="ui-icon" aria-hidden="true"><use href="img/ui-icons.svg#book"></use></svg></span> OS Digital</div>
+          <div class="func-item"><span><svg class="ui-icon" aria-hidden="true"><use href="img/ui-icons.svg#contact"></use></svg></span> Alertas WhatsApp</div>
         </div>
         <p class="text-light-sm gestao-note">
           A plataforma é <strong>trilíngue</strong> (Português, Inglês e Espanhol) e envia alertas inteligentes por <strong>e-mail e WhatsApp</strong> informando sobre vencimentos de NRs de cada funcionário.
@@ -531,11 +467,10 @@
 
 <!-- ============ PLATAFORMA EAD ============ -->
 <section id="ead" class="parallax-section" aria-labelledby="ead-title">
-  <canvas id="ead-canvas"></canvas>
   <div class="container section-content">
     <div class="ead-grid">
       <!-- Left Column: Spacer to show the background illustration -->
-      <div class="ead-left-col"></div>
+      <div class="ead-left-col"><img src="img/bg-ead.jpg" alt="" loading="lazy" decoding="async" /></div>
 
       <!-- Right Column: Text content, Perks and Glass Card below them -->
       <div class="reveal reveal-delay-1">
@@ -544,11 +479,11 @@
         <p class="section-sub text-light">Nossa plataforma EAD oferece treinamentos flexíveis com conteúdo constantemente atualizado conforme a legislação vigente.</p>
 
         <div class="ead-perks" style="margin-top: 1.5rem; margin-bottom: 2rem;">
-          <div class="ead-perk"><span class="ead-perk-icon">🌐</span> Acesso 24h por dia, 7 dias por semana</div>
-          <div class="ead-perk"><span class="ead-perk-icon">📱</span> Compatível com celular, tablet e computador</div>
-          <div class="ead-perk"><span class="ead-perk-icon">📜</span> Certificados válidos em todo o território nacional</div>
+          <div class="ead-perk"><span class="ead-perk-icon"><svg class="ui-icon" aria-hidden="true"><use href="img/ui-icons.svg#globe"></use></svg></span> Acesso 24h por dia, 7 dias por semana</div>
+          <div class="ead-perk"><span class="ead-perk-icon"><svg class="ui-icon" aria-hidden="true"><use href="img/ui-icons.svg#device"></use></svg></span> Compatível com celular, tablet e computador</div>
+          <div class="ead-perk"><span class="ead-perk-icon"><svg class="ui-icon" aria-hidden="true"><use href="img/ui-icons.svg#award"></use></svg></span> Certificados válidos em todo o território nacional</div>
         </div>
-        
+
         <div class="ead-info-card glass-card">
           <span class="ead-badge">NRs Online — 100% Legal</span>
           <h4 class="text-white font-bold mt-4 mb-2">Plataforma EAD Homologada</h4>
@@ -561,8 +496,7 @@
   </div>
 </section>
 <section id="nr-cursos" class="parallax-section" aria-labelledby="nr-title">
-  <div class="section-bg" style="background-image: url('img/hero-still.jpg'); filter: blur(5px) brightness(0.18);"></div>
-  <div class="section-overlay"></div>
+<div class="section-overlay"></div>
   <div class="container section-content flex flex-col justify-center">
     <div style="text-align:center" class="reveal">
       <span class="label">Normas Regulamentadoras</span>
@@ -571,17 +505,17 @@
         Treinamentos presenciais, in-company e EAD, conformes com as NRs vigentes. Certificados válidos em todo o Brasil.
       </p>
     </div>
-    <div class="nr-tabs" role="tablist">
-      <button class="nr-tab-btn active" role="tab" aria-selected="true" data-category="gestao">Geral & Gestão</button>
-      <button class="nr-tab-btn" role="tab" aria-selected="false" data-category="equipamentos">Instalações & Máquinas</button>
-      <button class="nr-tab-btn" role="tab" aria-selected="false" data-category="risco">Alto Risco</button>
-      <button class="nr-tab-btn" role="tab" aria-selected="false" data-category="setoriais">Setoriais & Naval</button>
+    <div class="nr-tabs" role="tablist" aria-label="Categorias de cursos NR">
+      <button class="nr-tab-btn active" role="tab" aria-selected="true" data-category="gestao" id="nr-tab-gestao" aria-controls="nr-cat-gestao">Geral & Gestão</button>
+      <button class="nr-tab-btn" role="tab" aria-selected="false" data-category="equipamentos" id="nr-tab-equipamentos" aria-controls="nr-cat-equipamentos">Instalações & Máquinas</button>
+      <button class="nr-tab-btn" role="tab" aria-selected="false" data-category="risco" id="nr-tab-risco" aria-controls="nr-cat-risco">Alto Risco</button>
+      <button class="nr-tab-btn" role="tab" aria-selected="false" data-category="setoriais" id="nr-tab-setoriais" aria-controls="nr-cat-setoriais">Setoriais & Naval</button>
     </div>
 
     <!-- Category 1: Geral & Gestão -->
-    <div class="nr-tab-content active" id="nr-cat-gestao" role="tabpanel">
+    <div class="nr-tab-content active" id="nr-cat-gestao" role="tabpanel" aria-labelledby="nr-tab-gestao" tabindex="0">
       <div class="nr-cards-grid">
-        <a href="nr/nr01.html" class="nr-card reveal" data-nr="01">
+        <a href="nr/nr01.html" class="nr-card reveal" data-nr="01"><img class="nr-card-image" src="img/nr/nr01.jpg" alt="" loading="lazy" decoding="async" width="640" height="360" />
           <div class="nr-card-header">
             <span class="nr-card-num">NR-01</span>
           </div>
@@ -589,7 +523,7 @@
           <p class="nr-card-desc">Gerenciamento de Riscos Ocupacionais (GRO) e elaboração do PGR.</p>
           <span class="nr-card-link">Ver detalhes e renovação &rarr;</span>
         </a>
-        <a href="nr/nr05.html" class="nr-card reveal" data-nr="05">
+        <a href="nr/nr05.html" class="nr-card reveal" data-nr="05"><img class="nr-card-image" src="img/nr/nr05.jpg" alt="" loading="lazy" decoding="async" width="640" height="360" />
           <div class="nr-card-header">
             <span class="nr-card-num">NR-05</span>
           </div>
@@ -597,7 +531,7 @@
           <p class="nr-card-desc">Constituição, treinamento e ações preventivas contra acidentes e assédio.</p>
           <span class="nr-card-link">Ver detalhes e renovação &rarr;</span>
         </a>
-        <a href="nr/nr06.html" class="nr-card reveal" data-nr="06">
+        <a href="nr/nr06.html" class="nr-card reveal" data-nr="06"><img class="nr-card-image" src="img/nr/nr06.jpg" alt="" loading="lazy" decoding="async" width="640" height="360" />
           <div class="nr-card-header">
             <span class="nr-card-num">NR-06</span>
           </div>
@@ -605,7 +539,7 @@
           <p class="nr-card-desc">Adequação, distribuição e treinamento de uso correto de EPIs.</p>
           <span class="nr-card-link">Ver detalhes e renovação &rarr;</span>
         </a>
-        <a href="nr/nr08.html" class="nr-card reveal" data-nr="08">
+        <a href="nr/nr08.html" class="nr-card reveal" data-nr="08"><img class="nr-card-image" src="img/nr/nr08.jpg" alt="" loading="lazy" decoding="async" width="640" height="360" />
           <div class="nr-card-header">
             <span class="nr-card-num">NR-08</span>
           </div>
@@ -613,7 +547,7 @@
           <p class="nr-card-desc">Padrões técnicos de segurança para a infraestrutura física de locais de trabalho.</p>
           <span class="nr-card-link">Ver detalhes e renovação &rarr;</span>
         </a>
-        <a href="nr/nr17.html" class="nr-card reveal" data-nr="17">
+        <a href="nr/nr17.html" class="nr-card reveal" data-nr="17"><img class="nr-card-image" src="img/nr/nr17.jpg" alt="" loading="lazy" decoding="async" width="640" height="360" />
           <div class="nr-card-header">
             <span class="nr-card-num">NR-17</span>
           </div>
@@ -621,7 +555,7 @@
           <p class="nr-card-desc">Análise Ergonômica do Trabalho (AET) para prevenção de dores e LER/DORT.</p>
           <span class="nr-card-link">Ver detalhes e renovação &rarr;</span>
         </a>
-        <a href="nr/nr26.html" class="nr-card reveal" data-nr="26">
+        <a href="nr/nr26.html" class="nr-card reveal" data-nr="26"><img class="nr-card-image" src="img/nr/nr26.jpg" alt="" loading="lazy" decoding="async" width="640" height="360" />
           <div class="nr-card-header">
             <span class="nr-card-num">NR-26</span>
           </div>
@@ -633,9 +567,9 @@
     </div>
 
     <!-- Category 2: Instalações & Máquinas -->
-    <div class="nr-tab-content" id="nr-cat-equipamentos" role="tabpanel">
+    <div class="nr-tab-content" id="nr-cat-equipamentos" role="tabpanel" aria-labelledby="nr-tab-equipamentos" tabindex="0">
       <div class="nr-cards-grid">
-        <a href="nr/nr10.html" class="nr-card reveal" data-nr="10">
+        <a href="nr/nr10.html" class="nr-card reveal" data-nr="10"><img class="nr-card-image" src="img/nr/nr10.jpg" alt="" loading="lazy" decoding="async" width="640" height="360" />
           <div class="nr-card-header">
             <span class="nr-card-num">NR-10</span>
           </div>
@@ -643,7 +577,7 @@
           <p class="nr-card-desc">Segurança no trabalho em sistemas elétricos de potência e proximidades.</p>
           <span class="nr-card-link">Ver detalhes e renovação &rarr;</span>
         </a>
-        <a href="nr/nr12.html" class="nr-card reveal" data-nr="12">
+        <a href="nr/nr12.html" class="nr-card reveal" data-nr="12"><img class="nr-card-image" src="img/nr/nr12.jpg" alt="" loading="lazy" decoding="async" width="640" height="360" />
           <div class="nr-card-header">
             <span class="nr-card-num">NR-12</span>
           </div>
@@ -651,7 +585,7 @@
           <p class="nr-card-desc">Sistemas de proteção e operação segura de maquinários e prensas industriais.</p>
           <span class="nr-card-link">Ver detalhes e renovação &rarr;</span>
         </a>
-        <a href="nr/nr13.html" class="nr-card reveal" data-nr="13">
+        <a href="nr/nr13.html" class="nr-card reveal" data-nr="13"><img class="nr-card-image" src="img/nr/nr13.jpg" alt="" loading="lazy" decoding="async" width="640" height="360" />
           <div class="nr-card-header">
             <span class="nr-card-num">NR-13</span>
           </div>
@@ -663,9 +597,9 @@
     </div>
 
     <!-- Category 3: Alto Risco -->
-    <div class="nr-tab-content" id="nr-cat-risco" role="tabpanel">
+    <div class="nr-tab-content" id="nr-cat-risco" role="tabpanel" aria-labelledby="nr-tab-risco" tabindex="0">
       <div class="nr-cards-grid">
-        <a href="nr/nr20.html" class="nr-card reveal" data-nr="20">
+        <a href="nr/nr20.html" class="nr-card reveal" data-nr="20"><img class="nr-card-image" src="img/nr/nr20.jpg" alt="" loading="lazy" decoding="async" width="640" height="360" />
           <div class="nr-card-header">
             <span class="nr-card-num">NR-20</span>
           </div>
@@ -673,7 +607,7 @@
           <p class="nr-card-desc">Gestão de segurança ocupacional no manuseio, refino e armazenamento.</p>
           <span class="nr-card-link">Ver detalhes e renovação &rarr;</span>
         </a>
-        <a href="nr/nr23.html" class="nr-card reveal" data-nr="23">
+        <a href="nr/nr23.html" class="nr-card reveal" data-nr="23"><img class="nr-card-image" src="img/nr/nr23.jpg" alt="" loading="lazy" decoding="async" width="640" height="360" />
           <div class="nr-card-header">
             <span class="nr-card-num">NR-23</span>
           </div>
@@ -681,7 +615,7 @@
           <p class="nr-card-desc">Treinamento de brigadas de incêndio e planejamento de rotas de evacuação.</p>
           <span class="nr-card-link">Ver detalhes e renovação &rarr;</span>
         </a>
-        <a href="nr/nr33.html" class="nr-card reveal" data-nr="33">
+        <a href="nr/nr33.html" class="nr-card reveal" data-nr="33"><img class="nr-card-image" src="img/nr/nr33.jpg" alt="" loading="lazy" decoding="async" width="640" height="360" />
           <div class="nr-card-header">
             <span class="nr-card-num">NR-33</span>
           </div>
@@ -689,7 +623,7 @@
           <p class="nr-card-desc">Procedimentos de entrada e resgate em locais com baixa ventilação (silos, tanques).</p>
           <span class="nr-card-link">Ver detalhes e renovação &rarr;</span>
         </a>
-        <a href="nr/nr35.html" class="nr-card reveal" data-nr="35">
+        <a href="nr/nr35.html" class="nr-card reveal" data-nr="35"><img class="nr-card-image" src="img/nr/nr35.jpg" alt="" loading="lazy" decoding="async" width="640" height="360" />
           <div class="nr-card-header">
             <span class="nr-card-num">NR-35</span>
           </div>
@@ -701,9 +635,9 @@
     </div>
 
     <!-- Category 4: Setoriais & Naval -->
-    <div class="nr-tab-content" id="nr-cat-setoriais" role="tabpanel">
+    <div class="nr-tab-content" id="nr-cat-setoriais" role="tabpanel" aria-labelledby="nr-tab-setoriais" tabindex="0">
       <div class="nr-cards-grid">
-        <a href="nr/nr11.html" class="nr-card reveal" data-nr="11">
+        <a href="nr/nr11.html" class="nr-card reveal" data-nr="11"><img class="nr-card-image" src="img/nr/nr11.jpg" alt="" loading="lazy" decoding="async" width="640" height="360" />
           <div class="nr-card-header">
             <span class="nr-card-num">NR-11</span>
           </div>
@@ -711,7 +645,7 @@
           <p class="nr-card-desc">Treinamento para operadores de empilhadeiras, guindastes e pontes rolantes.</p>
           <span class="nr-card-link">Ver detalhes e renovação &rarr;</span>
         </a>
-        <a href="nr/nr18.html" class="nr-card reveal" data-nr="18">
+        <a href="nr/nr18.html" class="nr-card reveal" data-nr="18"><img class="nr-card-image" src="img/nr/nr18.jpg" alt="" loading="lazy" decoding="async" width="640" height="360" />
           <div class="nr-card-header">
             <span class="nr-card-num">NR-18</span>
           </div>
@@ -719,7 +653,7 @@
           <p class="nr-card-desc">Normas ambientais e de proteção nos canteiros de obras de construção civil.</p>
           <span class="nr-card-link">Ver detalhes e renovação &rarr;</span>
         </a>
-        <a href="nr/nr29.html" class="nr-card reveal" data-nr="29">
+        <a href="nr/nr29.html" class="nr-card reveal" data-nr="29"><img class="nr-card-image" src="img/nr/nr29.jpg" alt="" loading="lazy" decoding="async" width="640" height="360" />
           <div class="nr-card-header">
             <span class="nr-card-num">NR-29</span>
           </div>
@@ -727,7 +661,7 @@
           <p class="nr-card-desc">SST na movimentação de cargas e atividades a bordo de navios nos portos.</p>
           <span class="nr-card-link">Ver detalhes e renovação &rarr;</span>
         </a>
-        <a href="nr/nr30.html" class="nr-card reveal" data-nr="30">
+        <a href="nr/nr30.html" class="nr-card reveal" data-nr="30"><img class="nr-card-image" src="img/nr/nr30.jpg" alt="" loading="lazy" decoding="async" width="640" height="360" />
           <div class="nr-card-header">
             <span class="nr-card-num">NR-30</span>
           </div>
@@ -735,7 +669,7 @@
           <p class="nr-card-desc">Condições de trabalho e convivência segura a bordo de embarcações comerciais.</p>
           <span class="nr-card-link">Ver detalhes e renovação &rarr;</span>
         </a>
-        <a href="nr/nr32.html" class="nr-card reveal" data-nr="32">
+        <a href="nr/nr32.html" class="nr-card reveal" data-nr="32"><img class="nr-card-image" src="img/nr/nr32.jpg" alt="" loading="lazy" decoding="async" width="640" height="360" />
           <div class="nr-card-header">
             <span class="nr-card-num">NR-32</span>
           </div>
@@ -743,7 +677,7 @@
           <p class="nr-card-desc">Diretrizes de SST contra riscos biológicos e radiológicos em ambientes de saúde.</p>
           <span class="nr-card-link">Ver detalhes e renovação &rarr;</span>
         </a>
-        <a href="nr/nr34.html" class="nr-card reveal" data-nr="34">
+        <a href="nr/nr34.html" class="nr-card reveal" data-nr="34"><img class="nr-card-image" src="img/nr/nr34.jpg" alt="" loading="lazy" decoding="async" width="640" height="360" />
           <div class="nr-card-header">
             <span class="nr-card-num">NR-34</span>
           </div>
@@ -751,7 +685,7 @@
           <p class="nr-card-desc">Segurança integrada em estaleiros de reparo, montagem e desmonte naval.</p>
           <span class="nr-card-link">Ver detalhes e renovação &rarr;</span>
         </a>
-        <a href="nr/nr37.html" class="nr-card reveal" data-nr="37">
+        <a href="nr/nr37.html" class="nr-card reveal" data-nr="37"><img class="nr-card-image" src="img/nr/nr37.jpg" alt="" loading="lazy" decoding="async" width="640" height="360" />
           <div class="nr-card-header">
             <span class="nr-card-num">NR-37</span>
           </div>
@@ -766,8 +700,7 @@
 
 <!-- ============ TREINAMENTOS TÉCNICOS ============ -->
 <section id="treinamentos" class="parallax-section" aria-labelledby="trein-title">
-  <div class="section-bg" style="background-image: url('img/bg-simulador.jpg'); filter: brightness(0.18) blur(3px);"></div>
-  <div class="section-overlay"></div>
+<div class="section-overlay"></div>
   <div class="container section-content flex flex-col justify-between">
     <div class="reveal">
       <h2 class="section-title text-white" id="trein-title">Treinamentos de Aperfeiçoamento</h2>
@@ -846,8 +779,7 @@
 
 <!-- ============ CONTATO ============ -->
 <section id="contato" class="parallax-section" aria-labelledby="contato-title">
-  <div class="section-bg" style="background-image: url('img/bg-contato.jpg')"></div>
-  <div class="section-overlay"></div>
+<div class="section-overlay"></div>
   <div class="container section-content flex flex-col justify-between h-full py-12">
     <div class="contato-grid mt-4">
       <div class="reveal">
@@ -856,21 +788,21 @@
         <p class="section-sub text-light">Entre em contato e descubra como o Grupo SETEC pode transformar a segurança e a capacitação da sua equipe.</p>
         <div class="ci-items mt-6">
           <div class="ci-item">
-            <div class="ci-icon">📍</div>
+            <div class="ci-icon"><svg class="ui-icon" aria-hidden="true"><use href="img/ui-icons.svg#location"></use></svg></div>
             <div class="ci-info">
               <strong class="text-white">Endereço</strong>
               <span class="text-light-sm">Rua Madureira, 4148, Boa Vista<br>São Gonçalo – RJ, Brasil<br><em>Ao lado da Marine Diesel</em></span>
             </div>
           </div>
           <div class="ci-item">
-            <div class="ci-icon">📞</div>
+            <div class="ci-icon"><svg class="ui-icon" aria-hidden="true"><use href="img/ui-icons.svg#phone"></use></svg></div>
             <div class="ci-info">
               <strong class="text-white">Telefone / WhatsApp</strong>
               <a href="https://wa.me/5521982874662" class="text-cobre-light">(21) 98287-4662</a>
             </div>
           </div>
           <div class="ci-item">
-            <div class="ci-icon">✉️</div>
+            <div class="ci-icon"><svg class="ui-icon" aria-hidden="true"><use href="img/ui-icons.svg#contact"></use></svg></div>
             <div class="ci-info">
               <strong class="text-white">E-mail</strong>
               <a href="mailto:contato@gruposetec.net" class="text-cobre-light">contato@gruposetec.net</a>
@@ -878,26 +810,26 @@
           </div>
         </div>
       </div>
-      <div class="contact-form glass-card reveal reveal-delay-1">
+      <form id="proposal-form" class="contact-form glass-card reveal reveal-delay-1">
         <h3>Solicitar Proposta</h3>
         <div class="f-row">
           <div class="f-group">
             <label for="nome">Nome completo *</label>
-            <input type="text" id="nome" name="nome" placeholder="Seu nome" required />
+            <input type="text" id="nome" name="nome" autocomplete="name" placeholder="Seu nome" required />
           </div>
           <div class="f-group">
             <label for="empresa">Empresa *</label>
-            <input type="text" id="empresa" name="empresa" placeholder="Nome da empresa" required />
+            <input type="text" id="empresa" name="empresa" autocomplete="organization" placeholder="Nome da empresa" required />
           </div>
         </div>
         <div class="f-row">
           <div class="f-group">
             <label for="email">E-mail *</label>
-            <input type="email" id="email" name="email" placeholder="seu@email.com" required />
+            <input type="email" id="email" name="email" autocomplete="email" placeholder="seu@email.com" required />
           </div>
           <div class="f-group">
             <label for="telefone">Telefone / WhatsApp</label>
-            <input type="tel" id="telefone" name="telefone" placeholder="(XX) XXXXX-XXXX" />
+            <input type="tel" inputmode="tel" id="telefone" name="telefone" autocomplete="tel" placeholder="(XX) XXXXX-XXXX" />
           </div>
         </div>
         <div class="f-group">
@@ -917,12 +849,13 @@
           <label for="mensagem">Mensagem</label>
           <textarea id="mensagem" name="mensagem" placeholder="Descreva sua necessidade..."></textarea>
         </div>
-        <button type="submit" class="btn btn-dark" style="width:100%;justify-content:center" onclick="submitForm(event)">
+        <button type="submit" class="btn btn-dark" style="width:100%;justify-content:center" >
           Enviar Solicitação →
         </button>
-      </div>
+        <p class="form-status" role="status" aria-live="polite" hidden></p>
+      </form>
     </div>
-    
+
     <!-- ============ FOOTER (INTEGRATED) ============ -->
     <footer class="footer-inline mt-12 pt-6 border-t border-white/10">
       <div class="footer-bottom-inline flex flex-col md:flex-row justify-between items-center text-xs text-white/50 gap-3 text-center">
@@ -943,10 +876,10 @@
   </div>
 </section>
 
-</div> <!-- End .scroll-container -->
+</main> <!-- End main content -->
 
 <!-- Modal Redes Sociais do Desenvolvedor -->
-<div id="devSocialModal" class="dev-social-modal" aria-hidden="true" role="dialog" aria-labelledby="devModalTitle">
+<div id="devSocialModal" class="dev-social-modal" aria-hidden="true" aria-modal="true" role="dialog" aria-labelledby="devModalTitle">
   <div class="dev-social-card">
     <button type="button" class="dev-modal-close" id="closeDevModalBtn" aria-label="Fechar modal">✕</button>
     <div class="dev-profile-header">
@@ -995,23 +928,7 @@
   </div>
 </div>
 
-<script src="script.js?v=14"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const quemSomos = document.getElementById('quem-somos');
-      if (quemSomos) {
-        quemSomos.addEventListener('mousemove', (e) => {
-          const rect = quemSomos.getBoundingClientRect();
-          const x = ((e.clientX - rect.left) / rect.width) * 100;
-          const y = ((e.clientY - rect.top) / rect.height) * 100;
-          quemSomos.style.setProperty('--mouse-x', `${x}%`);
-          quemSomos.style.setProperty('--mouse-y', `${y}%`);
-        });
-      }
-    });
-  </script>
-  
-
+<script src="script.js?v=mobile-nav-1" defer></script>
 </body>
 </html>
 

@@ -1,0 +1,15 @@
+# Project files that are not part of the public website
+.git/
+.vercel/
+.env*
+.claude/
+.gemini/
+.idea/
+.vscode/
+.originkit/
+design-study/
+components/
+README.md
+*.log
+_chk_gestao.png
+new_logos_test.html

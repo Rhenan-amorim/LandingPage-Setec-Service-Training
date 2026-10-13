@@ -8,7 +8,7 @@ O projeto foi criado para apresentar treinamentos e servicos relacionados, estru
 
 ## Tecnologias utilizadas
 
-- TypeScript
+- HTML estático
 - CSS
 - JavaScript
 
@@ -42,19 +42,31 @@ git clone https://github.com/Rhenan-amorim/LandingPage-Setec-Service-Training.gi
 cd LandingPage-Setec-Service-Training
 ```
 
-3. Instale as dependencias:
+3. Inicie um servidor estático (Python 3):
 
 ```bash
-npm install
+python -m http.server 8765 --bind 127.0.0.1
 ```
 
-4. Execute o projeto:
+4. Abra `http://127.0.0.1:8765/` no navegador. Não há instalação npm nem etapa de build nesta versão.
+
+## Verificações e direção visual
+
+A direção aprovada é **Marinho imersivo**, com barra inferior de vidro: sete destinos no desktop, quatro no mobile e três no menu superior complementar. O planejamento está em [design-study/checklist-implementacao.md](design-study/checklist-implementacao.md), e os resultados em [design-study/verificacao.md](design-study/verificacao.md).
+
+Verificação de sintaxe JavaScript:
 
 ```bash
-npm run dev
+node --check script.js
 ```
 
-5. Abra o endereco informado no terminal no navegador.
+Verificação estrutural, links locais, conteúdo e integridade de imagens contra o HEAD do Git (referência anterior ao redesign):
+
+```bash
+python design-study/check_project.py
+```
+
+O formulário prepara uma mensagem para o WhatsApp; a pessoa conclui o envio lá. Não existe backend de propostas neste repositório.
 
 ## Autor
 
