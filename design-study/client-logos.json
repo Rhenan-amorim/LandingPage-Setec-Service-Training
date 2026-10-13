@@ -1,0 +1,70 @@
+[
+  {
+    "src": "logos/petrobras.png",
+    "name": "Petrobras"
+  },
+  {
+    "src": "logos/subsea7.png",
+    "name": "Subsea 7"
+  },
+  {
+    "src": "logos/michelin.png",
+    "name": "Michelin"
+  },
+  {
+    "src": "logos/prio.png",
+    "name": "PRIO"
+  },
+  {
+    "src": "logos/dof.png",
+    "name": "DOF"
+  },
+  {
+    "src": "logos/cbo.png",
+    "name": "CBO"
+  },
+  {
+    "src": "logos/accelleron.png",
+    "name": "Accelleron"
+  },
+  {
+    "src": "logos/romaga.png",
+    "name": "Romaga"
+  },
+  {
+    "src": "logos/vms.png",
+    "name": "VMS Group"
+  },
+  {
+    "src": "logos/everllence.png",
+    "name": "Everllence"
+  },
+  {
+    "src": "logos/stx.png",
+    "name": "STX Service Americas"
+  },
+  {
+    "src": "logos/velko.png",
+    "name": "Velko"
+  },
+  {
+    "src": "logos/aegir.png",
+    "name": "Aegir Marine"
+  },
+  {
+    "src": "logos/nitnave.png",
+    "name": "Nitnave Offshore"
+  },
+  {
+    "src": "logos/baru.png",
+    "name": "Baru Offshore"
+  },
+  {
+    "src": "logos/wcm.png",
+    "name": "WCM"
+  },
+  {
+    "src": "logos/lamsa.png",
+    "name": "Lamsa"
+  }
+]

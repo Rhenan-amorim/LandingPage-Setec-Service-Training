@@ -215,6 +215,7 @@
     const element = event.target;
     if (!(element instanceof HTMLElement) || dock?.contains(element) || element.closest('[role="dialog"],dialog')) return;
     requestAnimationFrame(() => {
+      if (document.activeElement !== element) return;
       const box = element.getBoundingClientRect();
       const lowerEdge = dock?.getBoundingClientRect().top ?? window.innerHeight;
       if (box.bottom > lowerEdge - 16 && box.height < window.innerHeight / 2) {
